@@ -2,7 +2,7 @@
 
 import java.util.Scanner;
 
-public class Lab3_16 {
+public class Lab_16 {
     public static void main(String[] args) {
         Scanner sc=new Scanner(System.in);
         System.out.println("How many numbers will you enter :");
