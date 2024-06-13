@@ -15,5 +15,6 @@ public class Lab_13{
         for(i=0;i<n;i++){
             System.out.println("Element "+(i+1)+" = "+a[i]);
         }
+        // sc.close();
     }
 }
