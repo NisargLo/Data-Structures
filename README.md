@@ -1,1 +1,3 @@
-# Sem-3___Data_Structure
+<i><h1>Semester - 3</h1>
+<h1>Subject : Data Structure</h1>
+<h1>Programming Language - Java</h1></i>
