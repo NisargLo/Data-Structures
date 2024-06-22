@@ -9,8 +9,7 @@ public class Lab_18 {
     public static void main(String[] args) {
         Scanner sc=new Scanner(System.in);
         System.out.println("How many numbers will you enter :");
-        int n=sc.nextInt(),i,j,temp,flag=1;
-        String str=new String("");
+        int n=sc.nextInt(),i;
         int[] a=new int[n];
         for(i=0;i<a.length;i++){
             System.out.println("Enter element "+(i+1));
@@ -23,7 +22,7 @@ public class Lab_18 {
         for(i=0;i<a.length;i++){
             if(a[i]==first){
                 a[i]=second;
-                System.out.println("Index = "+i);
+                System.out.println("\nIndex = "+i);
                 break;
             }
         }
