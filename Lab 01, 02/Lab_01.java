@@ -7,7 +7,6 @@ public class Lab_01 {
         Scanner sc=new Scanner(System.in);
         double r=sc.nextDouble();
         System.out.println("Enter radius :");
-        double a=Math.PI*Math.pow(r, 2);
-        System.out.println("Area = "+a);
+        System.out.println("Area = "+(Math.PI*Math.pow(r, 2)));
     }
 }

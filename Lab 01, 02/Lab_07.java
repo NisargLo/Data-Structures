@@ -7,7 +7,7 @@ public class Lab_07 {
         Scanner sc=new Scanner(System.in);
         System.out.println("Enter number :");
         int n=sc.nextInt();
-        System.out.print("Factors : 6");
+        System.out.print("Factors : ");
         for(int i=1;i<=n;i++){
             if(n%i==0){
                 if(i!=n){

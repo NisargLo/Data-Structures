@@ -8,7 +8,7 @@ public class Lab_16 {
         System.out.println("How many numbers will you enter :");
         int n=sc.nextInt(),i;
         int[] a=new int[n];
-        for(i=0;i<n;i++){
+        for(i=0;i<a.length;i++){
             System.out.println("Enter element "+(i+1));
             a[i]=sc.nextInt();
         }

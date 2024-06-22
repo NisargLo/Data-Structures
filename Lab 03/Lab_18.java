@@ -12,7 +12,7 @@ public class Lab_18 {
         int n=sc.nextInt(),i,j,temp,flag=1;
         String str=new String("");
         int[] a=new int[n];
-        for(i=0;i<n;i++){
+        for(i=0;i<a.length;i++){
             System.out.println("Enter element "+(i+1));
             a[i]=sc.nextInt();
         }
@@ -20,7 +20,7 @@ public class Lab_18 {
         int first=sc.nextInt();
         System.out.println("Enter 2nd number :");
         int second=sc.nextInt();
-        for(i=0;i<n;i++){
+        for(i=0;i<a.length;i++){
             if(a[i]==first){
                 a[i]=second;
                 System.out.println("Index = "+i);

@@ -1,6 +1,5 @@
 // WAP to sort the N names in alphabetical order.
 
-import java.lang.reflect.Array;
 import java.util.Arrays;
 import java.util.Scanner;
 
@@ -11,11 +10,11 @@ public class Lab_20 {
         int n=sc.nextInt(),i;
         String[] s=new String[n];
         byte[] a=new byte[n];
-        for(i=0;i<n;i++){
+        for(i=0;i<a.length;i++){
             System.out.println("Enter name "+(i+1));
             s[i]=sc.next().trim();
         }
-        for(i=0;i<n;i++){
+        for(i=0;i<s.length;i++){
             if(s[i].charAt(0)>='A' && s[i].charAt(0)<='Z'){
                 s[i]=s[i].toLowerCase();
                 a[i]=1;

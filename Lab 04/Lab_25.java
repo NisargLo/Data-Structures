@@ -1,6 +1,8 @@
 // Write a program to delete duplicate numbers from an array.
 
-import java.util.*;
+import java.util.Scanner;
+import java.util.Set;
+import java.util.HashSet;
 
 public class Lab_25 {
     public static void main(String[] args) {

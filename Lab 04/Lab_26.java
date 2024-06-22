@@ -6,7 +6,7 @@ public class Lab_26 {
     public static void main(String[] args) {
         Scanner sc = new Scanner(System.in);
         System.out.println("Size of Array 1 :");
-        int m = sc.nextInt(),i,j,k;
+        int m = sc.nextInt(),i,j;
         int[] a = new int[m];
         for (i = 0; i < a.length; i++) {
             System.out.println("Enter element "+(i+1)+" of Array 1 :");
