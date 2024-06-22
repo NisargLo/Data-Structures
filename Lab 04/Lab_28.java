@@ -10,6 +10,9 @@ import java.util.*;
 public class Lab_28 {
     public static void main(String[] args) {
         Scanner sc = new Scanner(System.in);
+        System.out.println("Enter any of these Operations ('Sum', 'Min', 'Max', 'Avg') :");
+        String s= sc.nextLine();
+        boolean b_sum=false, b_min=false, b_max=false, b_avg=false;
         System.out.println("How many numbers will you enter :");
         int n = sc.nextInt(), i;
         int[] a = new int[n];
@@ -17,14 +20,28 @@ public class Lab_28 {
             System.out.println("Enter element " + (i + 1) + " :");
             a[i] = sc.nextInt();
         }
-        int sum=Sum(a);
-        System.out.println("Sum = "+sum);
-        int min=Min(a);
-        System.out.println("Min = "+min);
-        int max=Max(a);
-        System.out.println("Max = "+max);
-        int avg=Avg(a);
-        System.out.println("Avg = "+avg);
+        for(i=0;i<s.length();i++){
+            if(s.toLowerCase().contains("sum") && !b_sum){
+                int sum=Sum(a);
+                System.out.println("Sum = "+sum);
+                b_sum=true;
+            }
+            if(s.toLowerCase().contains("min") && !b_min){
+                int min=Min(a);
+                System.out.println("Min = "+min);
+                b_min=true;
+            }
+            if(s.toLowerCase().contains("max") && !b_max){
+                int max=Max(a);
+                System.out.println("Max = "+max);
+                 b_max=true;
+            }
+            if(s.toLowerCase().contains("avg") && !b_avg){
+                int avg=Avg(a);
+                System.out.println("Avg = "+avg);
+                b_avg=true;
+            }
+        }
     }
 
     private static int Sum(int[] a){
