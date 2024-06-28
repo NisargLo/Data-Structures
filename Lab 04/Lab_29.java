@@ -66,8 +66,77 @@
         6 2 2 5
  */
 
+import java.util.*;
+
 public class Lab_29 {
     public static void main(String[] args) {
+        Scanner scanner = new Scanner(System.in);
+        int tc = scanner.nextInt();
 
+        while (tc-- > 0) {
+            int n = scanner.nextInt();
+            int[] arr = new int[n];
+            int[] original = new int[n];
+
+            for (int i = 0; i < n; i++) {
+                arr[i] = scanner.nextInt();
+                original[i] = arr[i];
+            }
+
+            if (n == 1) {
+                System.out.println("0");
+                System.out.println(arr[0]);
+                continue;
+            }
+
+            int maxHamming = -1;
+            int[] result = new int[n];
+
+            // Try rotating the array and calculate Hamming distance
+            for (int rotation = 0; rotation < n; rotation++) {
+                rotateLeft(arr);
+                int hamming = calculateHamming(arr, original);
+                if (hamming > maxHamming) {
+                    maxHamming = hamming;
+                    copyArray(arr, result);
+                }
+            }
+
+            // Print the result for the current test case
+            System.out.println(maxHamming);
+            for (int i = 0; i < n; i++) {
+                System.out.print(result[i] + " ");
+            }
+            System.out.println();
+        }
+
+        scanner.close();
+    }
+
+    // Method to rotate the array one position to the left
+    private static void rotateLeft(int[] arr) {
+        int firstElement = arr[0];
+        for (int i = 1; i < arr.length; i++) {
+            arr[i - 1] = arr[i];
+        }
+        arr[arr.length - 1] = firstElement;
+    }
+
+    // Method to calculate Hamming distance between two arrays
+    private static int calculateHamming(int[] arr1, int[] arr2) {
+        int hammingDistance = 0;
+        for (int i = 0; i < arr1.length; i++) {
+            if (arr1[i] != arr2[i]) {
+                hammingDistance++;
+            }
+        }
+        return hammingDistance;
+    }
+
+    // Method to copy contents of one array into another
+    private static void copyArray(int[] source, int[] destination) {
+        for (int i = 0; i < source.length; i++) {
+            destination[i] = source[i];
+        }
     }
 }
