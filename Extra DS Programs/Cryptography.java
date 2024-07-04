@@ -12,15 +12,7 @@ public class Cryptography {
         Caesar_Cipher_Method ccm=new Caesar_Cipher_Method(plaintext, K);
         System.out.println("Encrypt or Decrypt?");
         String choose=sc.next().trim();
-        if(choose.equalsIgnoreCase("Encrypt")){
-            System.out.println("Ciphertext - "+ccm.encryption());
-        }
-        else if(choose.equalsIgnoreCase("Decrypt")){
-            System.out.println("Plaintext - "+ccm.decryption());
-        }
-        else{
-            System.out.println("Invalid");
-        }
+        ccm.display(choose);
     }
 }
 
@@ -43,17 +35,29 @@ class Caesar_Cipher_Method{
         }
     }
 
-    protected String encryption(){
+    private String encryption(){
         for (int i=0;i<this.charArry.length;i++) {
             this.charArry[i]=(char)(this.charArry[i]+K);
         }
         return new String(this.charArry);
     }
 
-    protected String decryption(){
+    private String decryption(){
         for (int i=0;i<this.charArry.length;i++) {
             this.charArry[i]=(char)(this.charArry[i]-K);
         }
         return new String(this.charArry);
+    }
+
+    protected void display(String choose){
+        if(choose.equalsIgnoreCase("Encrypt")){
+            System.out.println("Ciphertext - "+encryption());
+        }
+        else if(choose.equalsIgnoreCase("Decrypt")){
+            System.out.println("Plaintext - "+decryption());
+        }
+        else{
+            System.out.println("Invalid");
+        }
     }
 }
