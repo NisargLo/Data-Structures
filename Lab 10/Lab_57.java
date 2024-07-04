@@ -8,27 +8,81 @@
         Delete a node from specified position.
  */
 
+import java.util.Scanner;
+
 public class Lab_57 {
     public static void main(String[] args) {
+        Scanner sc=new Scanner(System.in);
         Linked_List ll = new Linked_List();
+        int choice=0;
+        while (choice!=-1) {
+            System.out.println("Enter 1 for insertAtFirstPosition() :");
+            System.out.println("Enter 2 for insertAtLastPosition() :");
+            System.out.println("Enter 3 for insertAtOrder() :");
+            System.out.println("Enter 4 for insertAtSpecificPosition() :");
+            System.out.println("Enter 5 for deleteFromFirstPosition() :");
+            System.out.println("Enter 6 for deleteFromLastPosition() :");
+            System.out.println("Enter 7 for deleteFromSpecificPosition() :");
+            System.out.println("Enter 8 for deleteAllNodes() :");
+            System.out.println("Enter 9 for displayLinkedList() :");
+            choice = sc.nextInt();
+            switch (choice) {
+                case 1:
+                    System.out.println("Enter Number :");
+                    int num1=sc.nextInt();
+                    ll.insertAtFirstPosition(num1);
+                    break;
 
-        ll.insertAtFirstPosition(3);
-        ll.insertAtFirstPosition(2);
-        ll.insertAtFirstPosition(1);
+                case 2:
+                    System.out.println("Enter Number :");
+                    int num2=sc.nextInt();
+                    ll.insertAtLastPosition(num2);
+                    break;
 
-        ll.insertAtLastPosition(8);
-        ll.insertAtLastPosition(9);
-        ll.insertAtLastPosition(10);
+                case 3:
+                    System.out.println("Enter Number :");
+                    int num3=sc.nextInt();
+                    ll.insertAtOrder(num3);
+                    break;
 
-        ll.insertAtOrder(0);
-        ll.insertAtOrder(5);
-        ll.insertAtOrder(50);
+                case 4:
+                    System.out.println("Enter Index :");
+                    int index1=sc.nextInt();
+                    System.out.println("Enter Number :");
+                    int num4=sc.nextInt();
+                    ll.insertAtSpecificPosition(index1, num4);
+                    break;
 
-        ll.insertAtSpecificPosition(2,77);
-        ll.insertAtSpecificPosition(5,99);
-        ll.insertAtSpecificPosition(8,55);
+                case 5:
+                    ll.deleteFromFirstPosition();
+                    break;
 
-        ll.displayLinkedList();
+                case 6:
+                    ll.deleteFromLastPosition();
+                    break;
+
+                case 7:
+                    System.out.println("Enter Index :");
+                    int index2=sc.nextInt();
+                    ll.deleteFromSpecificPosition(index2);
+                    break;
+
+                case 8:
+                    ll.deleteAllNodes();
+                    break;
+
+                case 9:
+                    ll.displayLinkedList();
+                    break;
+
+                case -1:
+                    System.out.println("Program Over...");
+                    break;
+
+                default:
+                    System.out.println("Invalid");
+            }
+        }
     }
 }
 
@@ -91,15 +145,19 @@ class Linked_List{
     }
 
     protected void deleteFromFirstPosition(){
-
+        System.out.println("deleteFromFirstPosition()");
     }
 
     protected void deleteFromLastPosition(){
-
+        System.out.println("deleteFromLastPosition()");
     }
 
-    protected void deleteFromSpecificPosition(){
+    protected void deleteFromSpecificPosition(int index){
+        System.out.println("deleteFromSpecificPosition(int index)");
+    }
 
+    protected void deleteAllNodes(){
+        System.out.println("deleteAllNodes()");
     }
 
     protected void displayLinkedList() {
