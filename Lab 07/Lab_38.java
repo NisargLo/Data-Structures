@@ -9,7 +9,7 @@ import java.util.*;
 public class Lab_38{
      public static void main(String[] args) {
           Scanner sc=new Scanner(System.in);
-          _Stack S=new _Stack();
+          Int_Stack S=new Int_Stack();
           System.out.println("Enter size of stack :");
           int n=sc.nextInt();
           S.stack_array=new int[n];
@@ -33,7 +33,6 @@ public class Lab_38{
                         System.out.println("Enter Index :");
                         int indexPeep=sc.nextInt();
                         System.out.println("peep() - "+S.peep(indexPeep));
-                        S.display();
                         break;
 
                    case "change":
@@ -42,7 +41,6 @@ public class Lab_38{
                         System.out.println("Enter Number :");
                         int num2=sc.nextInt();
                         S.change(indexChange,num2);
-                        S.display();
                         break;
 
                    case "display":
@@ -60,7 +58,7 @@ public class Lab_38{
      }
 }
 
-class _Stack{
+class Int_Stack{
      int[] stack_array;
      private int top=-1;
      int size;
@@ -68,11 +66,10 @@ class _Stack{
      protected void push(int x){
           if(top>=size-1){
                System.out.println("Stack Overflow");
+               return;
           }
-          else{
-               top++;
-               stack_array[top]=x;
-          }
+          top++;
+          stack_array[top]=x;
      }
 
      protected int pop(){
@@ -80,29 +77,24 @@ class _Stack{
                System.out.println("Stack Underflow");
                return 0;
           }
-          else{
-               top--;
-               return stack_array[top+1];
-          }
+          top--;
+          return stack_array[top+1];
      }
 
      protected int peep(int index){
-          if(top+1-index<=0){
+          if(top+1-index<=0 || index>top+1){
                System.out.println("Stack Underflow");
                return 0;
           }
-          else{
-               return stack_array[top+1-index];
-          }
+          return stack_array[top+1-index];
      }
 
      protected void change(int index, int x){
           if(top+1-index<=0){
                System.out.println("Stack Underflow");
+               return;
           }
-          else{
-               stack_array[top+1-index]=x;
-          }
+          stack_array[top+1-index]=x;
      }
 
      protected void display(){
