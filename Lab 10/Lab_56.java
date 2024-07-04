@@ -1,6 +1,8 @@
 /*
     Write a program to implement a node structure for singly linked list.
     Read the data in a node, print the node.
+
+    class Linked_List is used from Lab_57
  */
 
 import java.util.*;
