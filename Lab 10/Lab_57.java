@@ -16,15 +16,17 @@ public class Lab_57 {
         Linked_List ll = new Linked_List();
         int choice=0;
         while (choice!=-1) {
-            System.out.println("Enter 1 for insertAtFirstPosition() :");
+            System.out.println("\nEnter 1 for insertAtFirstPosition() :");
             System.out.println("Enter 2 for insertAtLastPosition() :");
             System.out.println("Enter 3 for insertAtOrder() :");
             System.out.println("Enter 4 for insertAtSpecificPosition() :");
             System.out.println("Enter 5 for deleteFromFirstPosition() :");
             System.out.println("Enter 6 for deleteFromLastPosition() :");
             System.out.println("Enter 7 for deleteFromSpecificPosition() :");
-            System.out.println("Enter 8 for deleteAllNodes() :");
-            System.out.println("Enter 9 for displayLinkedList() :");
+            System.out.println("Enter 8 for deleteGivenDataFromLinkedList() :");
+            System.out.println("Enter 9 for deleteAllNodes() :");
+            System.out.println("Enter 10 for displayLinkedList() :");
+            System.out.println("Enter -1 to exit :");
             choice = sc.nextInt();
             switch (choice) {
                 case 1:
@@ -68,10 +70,16 @@ public class Lab_57 {
                     break;
 
                 case 8:
-                    ll.deleteAllNodes();
+                    System.out.println("Enter Number :");
+                    int num5=sc.nextInt();
+                    ll.deleteGivenDataFromLinkedList(num5);
                     break;
 
                 case 9:
+                    ll.deleteAllNodes();
+                    break;
+
+                case 10:
                     ll.displayLinkedList();
                     break;
 
@@ -145,22 +153,71 @@ class Linked_List{
     }
 
     protected void deleteFromFirstPosition(){
-        System.out.println("deleteFromFirstPosition()");
+        if(first==null){
+            System.out.println("Empty LinkedList...");
+            return;
+        }
+        first=first.link;
     }
 
-    protected void deleteFromLastPosition(){
-        System.out.println("deleteFromLastPosition()");
+     protected void deleteFromLastPosition(){
+         if(first==null){
+             System.out.println("Empty LinkedList...");
+             return;
+         }
+         Node current=first;
+         while((current.link).link!=null){
+             current=current.link;
+         }
+         current.link=null;
     }
 
+    // user enters 1 based index :-
     protected void deleteFromSpecificPosition(int index){
-        System.out.println("deleteFromSpecificPosition(int index)");
+        if(first==null){
+            System.out.println("Empty LinkedList...");
+            return;
+        }
+        Node current=first;
+        int currentIndex=1;
+        while(currentIndex<index-1 && current.link!=null){
+            current=current.link;
+            currentIndex++;
+        }
+        assert current.link != null;
+        current.link=(current.link).link;
     }
 
-    protected void deleteAllNodes(){
-        System.out.println("deleteAllNodes()");
+    protected void deleteGivenDataFromLinkedList(int data){
+        if(first==null){
+            System.out.println("Empty LinkedList...");
+            return;
+        }
+        if(first.info==data){
+            first=first.link;
+            return;
+        }
+        Node current=first;
+        while(current.link!=null && current.link.info!=data){
+            current=current.link;
+        }
+        if(current.link==null){
+            System.out.println("No such element in LinkedList...");
+        }
+        else{
+            current.link=(current.link).link;
+        }
+    }
+
+    protected void deleteAllNodes() {
+        first=null;
     }
 
     protected void displayLinkedList() {
+        if(first==null){
+            System.out.println("Empty LinkedList...");
+            return;
+        }
         Node current = first;
         String str="";
         System.out.print("Linked List : [");
