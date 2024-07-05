@@ -96,13 +96,32 @@ public class Lab_71 {
 
 class Circular_Linked_List{
     Node first=null;
+    Node last=null;
 
     protected void insertAtFirstPosition(int data){
-        System.out.println("insertAtFirstPosition(int data)");
+        Node newNode=new Node(data);
+        if(first==null){
+            first=newNode;
+            last=newNode;
+            newNode.link=newNode;
+            return;
+        }
+        newNode.link=first;
+        last.link=newNode;
+        first=newNode;
     }
 
     protected void insertAtLastPosition(int data){
-        System.out.println("insertAtLastPosition(int data)");
+        Node newNode=new Node(data);
+        if(first==null){
+            first=newNode;
+            last=newNode;
+            newNode.link=newNode;
+            return;
+        }
+        last.link=newNode;
+        newNode.link=first;
+        last=newNode;
     }
 
     protected void insertAtOrder(int data) {
@@ -136,6 +155,19 @@ class Circular_Linked_List{
     }
 
     protected void displayCircularLinkedList() {
-        System.out.println("displayCircularLinkedList()");
+        if (first == null) {
+            System.out.println("Empty Circular Linked List...");
+            return;
+        }
+        Node current = first;
+        System.out.print("Linked List : [");
+        do {
+            System.out.print(current.info);
+            current = current.link;
+            if (current != first) {
+                System.out.print(", ");
+            }
+        } while (current != first);
+        System.out.println("]");
     }
 }

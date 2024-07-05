@@ -4,8 +4,36 @@
     class Circular_Linked_List is used from Lab_71
  */
 
+import java.util.Scanner;
+
 public class Lab_58 {
     public static void main(String[] args) {
+        Scanner sc=new Scanner(System.in);
+        Circular_Linked_List cll=new Circular_Linked_List();
+        System.out.println("Enter -1 to exit :");
+        int n;
+        while(true){
+            System.out.println("Enter No :");
+            n=sc.nextInt();
+            if(n==-1){
+                break;
+            }
+            cll.insertAtLastPosition(n);
+        }
+        cll.displayCircularLinkedList();
+        System.out.println("\nSize (No of nodes) of this circular linked list is "+sizeOfCircularLinkedList(cll));
+    }
 
+    private static int sizeOfCircularLinkedList(Circular_Linked_List c_list){
+        int size=1;
+        if(c_list.first==null){
+            return 0;
+        }
+        Node current=c_list.first;
+        while(current.link!=c_list.first){
+            current=current.link;
+            size++;
+        }
+        return size;
     }
 }
