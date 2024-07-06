@@ -1,3 +1,5 @@
+// Write a program to implement stack using singly linked list.
+
 import java.util.*;
 
 public class Lab_60 {
