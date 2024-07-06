@@ -1,17 +1,13 @@
-/*
-    WAP to check whether 2 singly linked lists are same or not.
-
-    class Linked_List is used from Lab_57
- */
+// WAP to check whether 2 singly linked lists are same or not.
 
 import java.util.Scanner;
 
 public class Lab_59 {
     public static void main(String[] args) {
         Scanner sc=new Scanner(System.in);
-        Linked_List[] list=new Linked_List[2];
+        Int_LinkedList[] list=new Int_LinkedList[2];
         for(int i=0;i<list.length;i++) {
-            list[i] = new Linked_List();
+            list[i] = new Int_LinkedList();
             System.out.println("\nLinkedList "+(i+1)+" :-\nEnter -1 to exit :");
             int n;
             while (true) {
@@ -32,7 +28,7 @@ public class Lab_59 {
         }
     }
 
-    private static boolean compareLinkedList(Linked_List list1, Linked_List list2) {
+    private static boolean compareLinkedList(Int_LinkedList list1, Int_LinkedList list2) {
         Node current1 = list1.first;
         Node current2 = list2.first;
         while (current1 != null && current2 != null) {

@@ -1,8 +1,4 @@
-/*
-    WAP to remove duplicate elements from a singly linked list.
-
-    class Linked_List is used from Lab_57
- */
+// WAP to remove duplicate elements from a singly linked list.
 
 import java.util.Set;
 import java.util.HashSet;
@@ -12,7 +8,7 @@ public class Lab_62 {
     public static void main(String[] args) {
         Set<Integer> set=new HashSet<>();
         Scanner sc=new Scanner(System.in);
-        Linked_List ll=new Linked_List();
+        Int_LinkedList ll=new Int_LinkedList();
         System.out.println("Enter -1 to exit :");
         int n;
         while(true){

@@ -4,8 +4,6 @@
         Insert a node at the end of the linked list.
         Delete a node from specified position.
         Display all nodes.
-
-    class Node is used from Lab_56
  */
 
 import java.util.Scanner;
@@ -13,7 +11,7 @@ import java.util.Scanner;
 public class Lab_71 {
     public static void main(String[] args) {
         Scanner sc=new Scanner(System.in);
-        Circular_Linked_List cll = new Circular_Linked_List();
+        Int_Circular_LinkedList cll = new Int_Circular_LinkedList();
         int choice=0;
         while (choice!=-1) {
             System.out.println("\nEnter 1 for insertAtFirstPosition() :");
@@ -94,7 +92,7 @@ public class Lab_71 {
     }
 }
 
-class Circular_Linked_List{
+class Int_Circular_LinkedList{
     Node first=null;
     Node last=null;
 

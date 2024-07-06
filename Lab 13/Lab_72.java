@@ -4,8 +4,6 @@
         Insert a node at the end of the linked list. (Home Work)
         Delete a node from specified position.
         Display all nodes. (Home Work)
-
-    class Node is used from Lab_56
  */
 
 import java.util.Scanner;
@@ -13,7 +11,7 @@ import java.util.Scanner;
 public class Lab_72 {
     public static void main(String[] args) {
         Scanner sc=new Scanner(System.in);
-        Doubly_Linked_List dll = new Doubly_Linked_List();
+        Int_Doubly_LinkedList dll = new Int_Doubly_LinkedList();
         int choice=0;
         while (choice!=-1) {
             System.out.println("\nEnter 1 for insertAtFirstPosition() :");
@@ -94,7 +92,7 @@ public class Lab_72 {
     }
 }
 
-class Doubly_Linked_List{
+class Int_Doubly_LinkedList{
     Node first=null;
 
     protected void insertAtFirstPosition(int data){

@@ -16,7 +16,7 @@ public class Lab_38 {
           S.size = n;
           String choice = "";
           while (!choice.equalsIgnoreCase("None")) {
-               System.out.println("\nEnter Operation (push, pop, peep, change, display, none) :");
+               System.out.println("\nEnter Operation (push, pop, peep, change, display, isEmpty, none) :");
                choice = sc.next();
                switch (choice) {
                     case "push":
@@ -45,6 +45,15 @@ public class Lab_38 {
 
                     case "display":
                          S.display();
+                         break;
+
+                    case "isEmpty":
+                         if(S.isEmpty()){
+                              System.out.println("Empty Stack");
+                         }
+                         else{
+                              System.out.println("Non-Empty Stack");
+                         }
                          break;
 
                     case "none":
@@ -103,5 +112,9 @@ class Int_Stack {
                System.out.print(stack_array[i] + ", ");
           }
           System.out.print(stack_array[top] + "]\n");
+     }
+
+     protected boolean isEmpty() {
+          return top==-1;
      }
 }

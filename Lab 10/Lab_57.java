@@ -6,8 +6,6 @@
         Delete a first node of the linked list.
         Delete a last node of the linked list.
         Delete a node from specified position.
-
-    class Node is used from Lab_56
  */
 
 import java.util.Scanner;
@@ -15,7 +13,7 @@ import java.util.Scanner;
 public class Lab_57 {
     public static void main(String[] args) {
         Scanner sc=new Scanner(System.in);
-        Linked_List ll = new Linked_List();
+        Int_LinkedList ll = new Int_LinkedList();
         int choice=0;
         while (choice!=-1) {
             System.out.println("\nEnter 1 for insertAtFirstPosition() :");
@@ -96,7 +94,7 @@ public class Lab_57 {
     }
 }
 
-class Linked_List{
+class Int_LinkedList{
     Node first=null;
 
     protected void insertAtFirstPosition(int data){

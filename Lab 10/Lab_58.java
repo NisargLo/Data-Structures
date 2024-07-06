@@ -1,15 +1,11 @@
-/*
-    Write a program to count the number of nodes in a singly circularly linked list.
-
-    class Circular_Linked_List is used from Lab_71
- */
+// Write a program to count the number of nodes in a singly circularly linked list.
 
 import java.util.Scanner;
 
 public class Lab_58 {
     public static void main(String[] args) {
         Scanner sc=new Scanner(System.in);
-        Circular_Linked_List cll=new Circular_Linked_List();
+        Int_Circular_LinkedList cll=new Int_Circular_LinkedList();
         System.out.println("Enter -1 to exit :");
         int n;
         while(true){
@@ -24,7 +20,7 @@ public class Lab_58 {
         System.out.println("\nSize (No of nodes) of this circular linked list is "+sizeOfCircularLinkedList(cll));
     }
 
-    private static int sizeOfCircularLinkedList(Circular_Linked_List c_list){
+    private static int sizeOfCircularLinkedList(Int_Circular_LinkedList c_list){
         int size=1;
         if(c_list.first==null){
             return 0;
