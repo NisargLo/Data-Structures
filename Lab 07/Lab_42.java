@@ -38,8 +38,25 @@
         Therefore, there are 2 books currently borrowed.
  */
 
+import java.util.*;
+
 public class Lab_42 {
     public static void main(String[] args) {
-
+            Scanner sc = new Scanner(System.in);
+            int N = sc.nextInt();
+            sc.nextLine();
+            Set<Integer> borrowedBooks = new HashSet<>();
+            for (int i = 0; i < N; i++) {
+                String operation = sc.next();
+                int bookId = sc.nextInt();
+                if (operation.equals("B")) {
+                    borrowedBooks.add(bookId);
+                }
+                else if (operation.equals("R")) {
+                    borrowedBooks.remove(bookId);
+                }
+            }
+            sc.close();
+            System.out.println(borrowedBooks.size());
     }
 }
