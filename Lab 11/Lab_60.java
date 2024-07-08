@@ -62,7 +62,6 @@ public class Lab_60 {
 }
 
 class Stack_Using_LinkedList {
-
     Node first = null;
 
     protected void push(int data) {
