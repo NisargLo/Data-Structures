@@ -55,16 +55,18 @@ class Char_Stack {
         return stack_array[top + 1];
     }
 
+    // user enters 1 based index :-
     protected char peep(int index) {
-        if (top + 1 - index <= 0 || index > top + 1) {
+        if (top + 1 - index < 0) {
             System.out.println("Stack Underflow");
             return 0;
         }
         return stack_array[top + 1 - index];
     }
 
+    // user enters 1 based index :-
     protected void change(int index, char x) {
-        if (top + 1 - index <= 0) {
+        if (top + 1 - index < 0) {
             System.out.println("Stack Underflow");
             return;
         }
