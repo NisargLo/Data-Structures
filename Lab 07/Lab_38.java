@@ -91,7 +91,7 @@ class Int_Stack {
      }
 
      protected int peep(int index) {
-          if (top + 1 - index <= 0 || index > top + 1) {
+          if (top + 1 - index < 0) {
                System.out.println("Stack Underflow");
                return 0;
           }
