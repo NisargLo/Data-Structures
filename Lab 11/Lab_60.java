@@ -3,7 +3,6 @@
 import java.util.Scanner;
 
 public class Lab_60 {
-
     public static void main(String[] args) {
         Scanner sc = new Scanner(System.in);
         Stack_Using_LinkedList S = new Stack_Using_LinkedList();
@@ -45,7 +44,8 @@ public class Lab_60 {
                 case "isEmpty":
                     if (S.isEmpty()) {
                         System.out.println("Empty Stack");
-                    } else {
+                    }
+                    else {
                         System.out.println("Non-Empty Stack");
                     }
                     break;
