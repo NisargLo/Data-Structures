@@ -4,5 +4,6 @@ class Int_Stack - Lab_38
 class Char_Stack - Lab_39
 class Node - Lab_56
 class Int_Linked_List - Lab_57
+class Stack_Using_LinkedList - Lab_60
 class Int_Circular_LinkedList - Lab_71
 class Int_Doubly_LinkedList - Lab_72
