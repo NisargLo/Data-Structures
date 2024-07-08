@@ -7,7 +7,6 @@
 import java.util.*;
 
 public class Lab_38 {
-
     public static void main(String[] args) {
         Scanner sc = new Scanner(System.in);
         Int_Stack S = new Int_Stack();
