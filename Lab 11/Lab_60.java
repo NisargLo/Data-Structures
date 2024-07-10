@@ -6,8 +6,6 @@ public class Lab_60 {
     public static void main(String[] args) {
         Scanner sc = new Scanner(System.in);
         Stack_Using_LinkedList S = new Stack_Using_LinkedList();
-        System.out.println("Enter size of stack :");
-        int n = sc.nextInt();
         String choice = "";
         while (!choice.equalsIgnoreCase("None")) {
             System.out.println("\nEnter Operation (push, pop, peep, change, display, isEmpty, none) :");
