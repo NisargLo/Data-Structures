@@ -9,11 +9,9 @@ import java.util.*;
 public class Lab_38 {
     public static void main(String[] args) {
         Scanner sc = new Scanner(System.in);
-        Int_Stack S = new Int_Stack();
         System.out.println("Enter size of stack :");
         int n = sc.nextInt();
-        S.stack_array = new int[n];
-        S.size = n;
+        Int_Stack S = new Int_Stack(n);
         String choice = "";
         while (!choice.equalsIgnoreCase("None")) {
             System.out.println("\nEnter Operation (push, pop, peep, change, display, isEmpty, none) :");
@@ -71,6 +69,11 @@ class Int_Stack {
     int[] stack_array;
     private int top = -1;
     int size;
+
+    protected Int_Stack(int size) {
+        this.size=size;
+        this.stack_array=new int[this.size];
+    }
 
     protected void push(int x) {
         if (top >= size - 1) {

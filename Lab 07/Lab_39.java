@@ -8,11 +8,9 @@ import java.util.Scanner;
 public class Lab_39 {
     public static void main(String[] args) {
         Scanner sc=new Scanner(System.in);
-        Char_Stack cs=new Char_Stack();
         System.out.println("Enter String :");
         String str=sc.next();
-        cs.size=str.length();
-        cs.stack_array=new char[cs.size];
+        Char_Stack cs=new Char_Stack(str.length());
         for(int i=0;i<str.length();i++){
             if(str.toLowerCase().charAt(i)!='a' && str.toLowerCase().charAt(i)!='b' && str.toLowerCase().charAt(i)!='c'){
                 System.out.println("String not recognized.");
@@ -36,6 +34,11 @@ class Char_Stack {
     char[] stack_array;
     private int top = -1;
     int size;
+
+    protected Char_Stack(int size) {
+        this.size=size;
+        this.stack_array=new char[this.size];
+    }
 
     protected void push(char x) {
         if (top >= size - 1) {

@@ -56,9 +56,7 @@ public class Lab_41 {
     }
 
     private static boolean isValid(String s) {
-        Char_Stack stk = new Char_Stack();
-        stk.size=s.length();
-        stk.stack_array=new char[stk.size];
+        Char_Stack stk = new Char_Stack(s.length());
         for (char c : s.toCharArray()) {
             if (c == '(') {
                 stk.push(')');
