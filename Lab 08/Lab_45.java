@@ -7,20 +7,21 @@ class Lab_45 {
           Scanner sc = new Scanner(System.in);
           System.out.println("Enter Infix :");
           String infix = sc.nextLine();
+          infix += ")";
           Char_Stack cs = new Char_Stack(infix.length());
           byte top = 0;
           byte rank = 1;
           cs.push('(');
           String polish = "";
           char next = infix.charAt(0);
-          while (next!='(') {
+          while (next!=')') {
                if (top < 0) {
                     System.out.println("Invalid..");
                }
-               while (stackPrecedenceFunction()>) { 
-                    
-               }
-               polish += 
+               // while (stackPrecedenceFunction()) {
+
+               // }
+               // polish += a;
           }
 
      }
