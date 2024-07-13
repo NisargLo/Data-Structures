@@ -31,4 +31,9 @@ class Node {
         this.info=data;
         this.link=null;
     }
+
+    public Node(int data, Node anotherLink){
+        this.info=data;
+        this.link=anotherLink;
+    }
 }

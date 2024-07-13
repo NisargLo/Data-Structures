@@ -18,10 +18,10 @@ class Lab_45 {
                if (top < 0) {
                     System.out.println("Invalid..");
                }
-               // while (stackPrecedenceFunction()) {
-
-               // }
-               // polish += a;
+//               while (stackPrecedenceFunction()) {
+//
+//               }
+//               polish +=
           }
 
      }

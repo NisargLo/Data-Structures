@@ -149,7 +149,7 @@ class Stack_Using_LinkedList {
         }
         str = str.substring(0, str.length() - 2);
         str += "]\n";
-        System.out.println(str);
+        System.out.println("Stack - "+str);
     }
 
     protected boolean isEmpty() {

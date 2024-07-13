@@ -50,7 +50,11 @@ class Queue_Using_LinkedList{
                System.out.println("Empty Queue...");
                return;
           }
-          first=first.link;
+          Node current = first;
+          while ((current.link).link != null) {
+               current = current.link;
+          }
+          current.link = null;
      }
 
      protected void display(){
