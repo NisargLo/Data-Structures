@@ -7,23 +7,45 @@ class Lab_45 {
           Scanner sc = new Scanner(System.in);
           System.out.println("Enter Infix :");
           String infix = sc.nextLine();
+          String postfix = reversePolish(infix);
+          if(postfix!=null){
+               System.out.println("Postfix : "+postfix);
+          }
+     }
+
+     private static String reversePolish(String infix){
           infix += ")";
           Char_Stack cs = new Char_Stack(infix.length());
-          byte top = 0;
-          byte rank = 1;
+          byte rank = 0;
           cs.push('(');
           String polish = "";
-          char next = infix.charAt(0);
-          while (next!=')') {
-               if (top < 0) {
-                    System.out.println("Invalid..");
+          for (int i=0;i<infix.length();i++) {
+               if (cs.isEmpty()) {
+                    System.out.println("Invalid Infix.");
+                    return null;
                }
-//               while (stackPrecedenceFunction()) {
-//
-//               }
-//               polish +=
+               char next = infix.charAt(i);
+               while (stackPrecedenceFunction(cs.peep(1))>inputPrecedenceFunction(next)) {
+                    char temp = cs.pop();
+                    polish += temp;
+                    rank += rankFunction(temp);
+                    if(rank<1){
+                         System.out.println("Invalid Infix..");
+                         return null;
+                    }
+               }
+               if(stackPrecedenceFunction(cs.peep(1))!=inputPrecedenceFunction(next)){
+                    cs.push(next);
+               }
+               else{
+                    cs.pop();
+               }
           }
-
+          if(rank!=1){
+               System.out.println("Invalid Infix..");
+               return null;
+          }
+          return polish;
      }
 
      private static byte inputPrecedenceFunction(char c) {
