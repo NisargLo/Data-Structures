@@ -77,6 +77,10 @@ class Char_Stack {
     }
 
     protected void display() {
+        if(isEmpty()){
+            System.out.println("Empty Stack...");
+            return;
+        }
         System.out.print("[");
         for (int i = 0; i < top; i++) {
             System.out.print(stack_array[i] + ", ");
