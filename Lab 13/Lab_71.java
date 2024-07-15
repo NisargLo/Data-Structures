@@ -154,7 +154,7 @@ class Int_Circular_LinkedList{
 
     protected void displayCircularLinkedList() {
         if (first == null) {
-            System.out.println("Empty Circular Linked List...");
+            System.out.println("Empty Circular LinkedList...");
             return;
         }
         Node current = first;
