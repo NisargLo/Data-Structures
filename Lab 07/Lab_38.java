@@ -1,7 +1,7 @@
 /*
-     Write a menu driven program to implement following operations on the Stack using an Array
-          PUSH, POP, DISPLAY
-          PEEP, CHANGE
+    Write a menu driven program to implement following operations on the Stack using an Array
+        PUSH, POP, DISPLAY
+        PEEP, CHANGE
  */
 
 import java.util.*;
