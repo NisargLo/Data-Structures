@@ -38,6 +38,8 @@
         Total cost = 4 + 4 + 5 = 13
  */
 
+import java.util.*;
+
 public class Lab_49 {
     public static void main(String[] args) {
 
