@@ -127,12 +127,62 @@ class Int_Circular_LinkedList{
             System.out.println("Empty Circular LinkedList...");
             return;
         }
-        
+        Node newNode=new Node(data);
+        if(newNode.info<first.info){
+            last.link=newNode;
+            newNode.link=first;
+            first=newNode;
+            return;
+        }
+        else if(newNode.info>=last.info){
+            newNode.link=first;
+            last.link=newNode;
+            last=newNode;
+            return;
+        }
+        Node current=first;
+        while(newNode.info>=current.link.info){
+            current=current.link;
+        }
+        newNode.link=current.link;
+        current.link=newNode;
     }
 
     // user enters 1 based index :-
     protected void insertAtSpecificPosition(int index, int data){
-        System.out.println("insertAtSpecificPosition(int index, int data)");
+        if(first==null){
+            System.out.println("Empty Circular LinkedList...");
+            return;
+        }
+        Node current=first;
+        int c=1;
+        while(current.link!=first){
+            current=current.link;
+            c++;
+        }
+        if(index<1 || index>c+1){
+            System.out.println("Invalid Index..");
+            return;
+        }
+        Node newNode=new Node(data);
+        if(index==1){
+            newNode.link=first;
+            last.link=newNode;
+            first=newNode;
+            return;
+        }
+        else if(index==c+1){
+            last.link=newNode;
+            newNode.link=first;
+            last=newNode;
+            return;
+        }
+        current=first;
+        for (int i = 1; i < index - 1; i++) {
+            current = current.link;
+        }
+        newNode.link=current.link;
+        current.link=newNode;
     }
 
     protected void deleteFromFirstPosition(){
@@ -159,11 +209,70 @@ class Int_Circular_LinkedList{
 
     // user enters 1 based index :-
     protected void deleteFromSpecificPosition(int index){
-        System.out.println("deleteFromSpecificPosition(int index)");
+        if(first==null){
+            System.out.println("Empty Circular LinkedList...");
+            return;
+        }
+        Node current=first;
+        int c=1;
+        while(current.link!=first){
+            current=current.link;
+            c++;
+        }
+        if(index<1 || index>c){
+            System.out.println("Invalid Index..");
+            return;
+        }
+        if(index==1){
+            first=first.link;
+            last.link=first;
+            return;
+        }
+        else if(index==c){
+            current=first;
+            while((current.link).link!=first){
+                current=current.link;
+            }
+            current.link=first;
+            last=current;
+            return;
+        }
+        current=first;
+        for(int i=1;i<index-1;i++){
+            current=current.link;
+        }
+        current.link=(current.link).link;
     }
 
     protected void deleteGivenDataFromCircularLinkedList(int data){
-        System.out.println("deleteGivenDataFromCircularLinkedList(int data)");
+        if(first==null){
+            System.out.println("Empty Circular LinkedList...");
+            return;
+        }
+        Node newNode=new Node(data);
+        Node current;
+        if(newNode.info==first.info){
+            first=first.link;
+            last.link=first;
+            return;
+        }
+        else if(newNode.info==last.info){
+            current=first;
+            while((current.link).link!=first){
+                current=current.link;
+            }
+            current.link=first;
+            last=current;
+            return;
+        }
+        current=first;
+        while(current.link!=first){
+            if(newNode.info==current.link.info){
+                current.link=(current.link).link;
+                return;
+            }
+            current=current.link;
+        }
     }
 
     protected void deleteAllNodes() {
