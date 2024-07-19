@@ -35,14 +35,15 @@ public class Lab_68 {
         Node previous = ill.first;
         Node current = previous.link;
         ill.first = current;
-        while (current != null && current.link != null) {
+        while (true) {
             Node next = current.link;
             current.link = previous;
-            if (next.link == null) {
+            if (next == null || next.link == null) {
                 previous.link = next;
+                break;
             }
             else {
-                previous.link = next.link; 
+                previous.link = next.link;
                 previous = next;
                 current = previous.link;
             }

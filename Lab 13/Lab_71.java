@@ -123,7 +123,11 @@ class Int_Circular_LinkedList{
     }
 
     protected void insertAtOrder(int data) {
-        System.out.println("insertAtOrder(int data)");
+        if(first==null){
+            System.out.println("Empty Circular LinkedList...");
+            return;
+        }
+        
     }
 
     // user enters 1 based index :-
@@ -132,11 +136,25 @@ class Int_Circular_LinkedList{
     }
 
     protected void deleteFromFirstPosition(){
-        System.out.println("deleteFromFirstPosition()");
+        if(first==null){
+            System.out.println("Empty Circular LinkedList...");
+            return;
+        }
+        first=first.link;
+        last.link=first;
     }
 
     protected void deleteFromLastPosition(){
-        System.out.println("deleteFromLastPosition()");
+        if(first==null){
+            System.out.println("Empty Circular LinkedList...");
+            return;
+        }
+        Node current=first;
+        while((current.link).link!=first){
+            current=current.link;
+        }
+        current.link=first;
+        last=current;
     }
 
     // user enters 1 based index :-
@@ -149,7 +167,8 @@ class Int_Circular_LinkedList{
     }
 
     protected void deleteAllNodes() {
-        System.out.println("deleteAllNodes()");
+        first=null;
+        last=null;
     }
 
     protected void displayCircularLinkedList() {
@@ -158,7 +177,7 @@ class Int_Circular_LinkedList{
             return;
         }
         Node current = first;
-        System.out.print("Linked List : [");
+        System.out.print("Circular Linked List : [");
         do {
             System.out.print(current.info);
             current = current.link;
