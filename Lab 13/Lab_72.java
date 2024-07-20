@@ -268,12 +268,60 @@ class Int_Doubly_LinkedList{
         int c=1;
         while(current.next!=null){
             current=current.next;
+            c++;
         }
-
+        if(index<1 || index>c+1){
+            System.out.println("Invalid Index..");
+            return;
+        }
+        if(index==c+1){
+            if(tail.previous==null){
+                head=null;
+                tail=null;
+                return;
+            }
+            tail=tail.previous;
+            tail.next=null;
+            return;
+        }
+        current=head;
+        for(int i=1;i<index-1;i++){
+            current=current.next;
+        }
+        current.next=current.next.next;
+        if(current.next!=null){
+            current.next.previous=current;
+        }
     }
 
     protected void deleteGivenDataFromDoublyLinkedList(int data){
-        System.out.println("deleteGivenDataFromDoublyLinkedList(int data)");
+        if(head==null){
+            System.out.println("Empty Doubly LinkedList...");
+            return;
+        }
+        if(head.next==null){
+            head=null;
+            tail=null;
+            return;
+        }
+        if(data==head.info){
+            head=head.next;
+            head.previous=null;
+            return;
+        }
+        if(data==tail.info){
+            tail=tail.previous;
+            tail.next=null;
+            return;
+        }
+        Doubly_Node current=head;
+        while(current.next.info!=data){
+            current=current.next;
+        }
+        current.next=current.next.next;
+        if(current.next!=null){
+            current.next.previous=current;
+        }
     }
 
     protected void deleteAllNodes() {
@@ -282,7 +330,7 @@ class Int_Doubly_LinkedList{
     }
 
     protected boolean isEmpty() {
-        return head==null;
+        return (head==null && tail==null);
     }
 
     protected void display_headToTail_DoublyLinkedList() {
