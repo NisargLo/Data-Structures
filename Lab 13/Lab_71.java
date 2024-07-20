@@ -23,7 +23,8 @@ public class Lab_71 {
             System.out.println("Enter 7 for deleteFromSpecificPosition() :");
             System.out.println("Enter 8 for deleteGivenDataFromCircularLinkedList() :");
             System.out.println("Enter 9 for deleteAllNodes() :");
-            System.out.println("Enter 10 for displayCircularLinkedList() :");
+            System.out.println("Enter 10 for isEmpty() :");
+            System.out.println("Enter 11 for displayCircularLinkedList() :");
             System.out.println("Enter -1 to exit :");
             choice = sc.nextInt();
             switch (choice) {
@@ -78,6 +79,10 @@ public class Lab_71 {
                     break;
 
                 case 10:
+                    System.out.println(cll.isEmpty());
+                    break;
+
+                case 11:
                     cll.displayCircularLinkedList();
                     break;
 
@@ -123,11 +128,13 @@ class Int_Circular_LinkedList{
     }
 
     protected void insertAtOrder(int data) {
+        Node newNode=new Node(data);
         if(first==null){
-            System.out.println("Empty Circular LinkedList...");
+            first=newNode;
+            last=newNode;
+            newNode.link=newNode;
             return;
         }
-        Node newNode=new Node(data);
         if(newNode.info<first.info){
             last.link=newNode;
             newNode.link=first;
@@ -150,8 +157,14 @@ class Int_Circular_LinkedList{
 
     // user enters 1 based index :-
     protected void insertAtSpecificPosition(int index, int data){
+        Node newNode=new Node(data);
         if(first==null){
-            System.out.println("Empty Circular LinkedList...");
+            if(index!=1){
+                System.out.println("Although you have written index - "+index+"\nInserted at first position as Circular LinkedList was empty.");
+            }
+            first=newNode;
+            last=newNode;
+            newNode.link=newNode;
             return;
         }
         Node current=first;
@@ -164,7 +177,6 @@ class Int_Circular_LinkedList{
             System.out.println("Invalid Index..");
             return;
         }
-        Node newNode=new Node(data);
         if(index==1){
             newNode.link=first;
             last.link=newNode;
@@ -280,13 +292,17 @@ class Int_Circular_LinkedList{
         last=null;
     }
 
+    protected boolean isEmpty() {
+        return first==null;
+    }
+
     protected void displayCircularLinkedList() {
         if (first == null) {
             System.out.println("Empty Circular LinkedList...");
             return;
         }
         Node current = first;
-        System.out.print("Circular Linked List : [");
+        System.out.print("Circular LinkedList : [");
         do {
             System.out.print(current.info);
             current = current.link;

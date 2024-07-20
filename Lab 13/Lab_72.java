@@ -1,7 +1,7 @@
 /*
     Write a menu driven program to implement following operations on the doubly linked list.
-        Insert a node at the front of the linked list.
-        Insert a node at the end of the linked list. (Home Work)
+        Insert a node at the front(right) of the linked list.
+        Insert a node at the back(left) of the linked list. (Home Work)
         Delete a node from specified position.
         Display all nodes. (Home Work)
  */
@@ -23,7 +23,8 @@ public class Lab_72 {
             System.out.println("Enter 7 for deleteFromSpecificPosition() :");
             System.out.println("Enter 8 for deleteGivenDataFromDoublyLinkedList() :");
             System.out.println("Enter 9 for deleteAllNodes() :");
-            System.out.println("Enter 10 for displayDoublyLinkedList() :");
+            System.out.println("Enter 10 for isEmpty() :");
+            System.out.println("Enter 11 for displayDoublyLinkedList() :");
             System.out.println("Enter -1 to exit :");
             choice = sc.nextInt();
             switch (choice) {
@@ -78,6 +79,10 @@ public class Lab_72 {
                     break;
 
                 case 10:
+                    System.out.println(dll.isEmpty());
+                    break;
+
+                case 11:
                     dll.displayDoublyLinkedList();
                     break;
 
@@ -92,15 +97,45 @@ public class Lab_72 {
     }
 }
 
+class Doubly_Node {
+    public int info;
+    public Doubly_Node previous;
+    public Doubly_Node next;
+
+    public Doubly_Node(int data) {
+        this.info = data;
+        this.previous = null;
+        this.next = null;
+    }
+
+    public Doubly_Node(int data, Doubly_Node previousLink, Doubly_Node nextLink) {
+        this.info = data;
+        this.previous = previousLink;
+        this.next = nextLink;
+    }
+}
+
 class Int_Doubly_LinkedList{
-    Node first=null;
+    Doubly_Node right=null;
+    Doubly_Node left=null;
 
     protected void insertAtFirstPosition(int data){
-        System.out.println("insertAtFirstPosition(int data)");
+        Doubly_Node newNode=new Doubly_Node(data);
+        newNode.next=right;
+        newNode.previous=left;
+        right=newNode;
     }
 
     protected void insertAtLastPosition(int data){
-        System.out.println("insertAtLastPosition(int data)");
+        Doubly_Node newNode=new Doubly_Node(data);
+        if(right==null){
+            newNode.next=right;
+            newNode.previous=left;
+            right=newNode;
+            return;
+        }
+        Doubly_Node current=right;
+
     }
 
     protected void insertAtOrder(int data) {
@@ -109,6 +144,16 @@ class Int_Doubly_LinkedList{
 
     // user enters 1 based index :-
     protected void insertAtSpecificPosition(int index, int data){
+        /*Node newNode=new Node(data);
+        if(first==null){
+            if(index!=1){
+                System.out.println("Although you have written index - "+index+"\nInserted at first position as Circular LinkedList was empty.");
+            }
+            first=newNode;
+            last=newNode;
+            newNode.link=newNode;
+            return;
+        }*/
         System.out.println("insertAtSpecificPosition(int index, int data)");
     }
 
@@ -130,10 +175,28 @@ class Int_Doubly_LinkedList{
     }
 
     protected void deleteAllNodes() {
-        System.out.println("deleteAllNodes()");
+        right=null;
+        left=null;
+    }
+
+    protected boolean isEmpty() {
+        return right==null;
     }
 
     protected void displayDoublyLinkedList() {
-        System.out.println("displayDoublyLinkedList()");
+        if(right==null){
+            System.out.println("Empty Doubly LinkedList...");
+            return;
+        }
+        Doubly_Node current = right;
+        System.out.print("Doubly LinkedList : [");
+        do {
+            System.out.print(current.info);
+            current = current.next;
+            if (current != null) {
+                System.out.print(", ");
+            }
+        } while (current != null);
+        System.out.println("]");
     }
 }

@@ -25,7 +25,8 @@ public class Lab_57 {
             System.out.println("Enter 7 for deleteFromSpecificPosition() :");
             System.out.println("Enter 8 for deleteGivenDataFromLinkedList() :");
             System.out.println("Enter 9 for deleteAllNodes() :");
-            System.out.println("Enter 10 for displayLinkedList() :");
+            System.out.println("Enter 10 for isEmpty() :");
+            System.out.println("Enter 11 for displayLinkedList() :");
             System.out.println("Enter -1 to exit :");
             choice = sc.nextInt();
             switch (choice) {
@@ -80,6 +81,10 @@ public class Lab_57 {
                     break;
 
                 case 10:
+                    System.out.println(ll.isEmpty());
+                    break;
+
+                case 11:
                     ll.displayLinkedList();
                     break;
 
@@ -132,10 +137,15 @@ class Int_LinkedList{
     }
 
     // user enters 1 based index :-
-    protected void insertAtSpecificPosition(int index, int data){
+    protected void insertAtSpecificPosition(int index, int data) {
         Node newNode = new Node(data);
         if (index <= 0) {
             System.out.println("Invalid index.");
+            return;
+        }
+        if (index == 1) {
+            newNode.link = first;
+            first = newNode;
             return;
         }
         Node current = first;
@@ -213,6 +223,10 @@ class Int_LinkedList{
         first=null;
     }
 
+    protected boolean isEmpty() {
+        return first==null;
+    }
+
     protected void displayLinkedList() {
         if(first==null){
             System.out.println("Empty LinkedList...");
@@ -220,7 +234,7 @@ class Int_LinkedList{
         }
         Node current = first;
         String str="";
-        System.out.print("Linked List : [");
+        System.out.print("LinkedList : [");
         while (current != null) {
             str += current.info+", ";
             current = current.link;
