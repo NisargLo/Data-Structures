@@ -213,10 +213,9 @@ class Int_LinkedList{
         }
         if(current.link==null){
             System.out.println("No such element in LinkedList...");
+            return;
         }
-        else{
-            current.link=(current.link).link;
-        }
+        current.link=(current.link).link;
     }
 
     protected void deleteAllNodes() {

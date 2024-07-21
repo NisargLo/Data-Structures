@@ -28,11 +28,11 @@ public class Lab_63 {
 
     private static Int_LinkedList copyLinkedList(Int_LinkedList ill1){
         Int_LinkedList ill2=new Int_LinkedList();
-        Node current1=ill1.first;
-        ill2.insertAtLastPosition(current1.info);
-        while(current1.link!=null){
-            current1=current1.link;
-            ill2.insertAtLastPosition(current1.info);
+        Node current=ill1.first;
+        ill2.insertAtLastPosition(current.info);
+        while(current.link!=null){
+            current=current.link;
+            ill2.insertAtLastPosition(current.info);
         }
         return ill2;
     }
