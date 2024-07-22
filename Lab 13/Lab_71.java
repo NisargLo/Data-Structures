@@ -148,7 +148,7 @@ class Int_Circular_LinkedList{
             return;
         }
         Node current=first;
-        while(newNode.info>=current.link.info){
+        while(current!=last && newNode.info>=current.link.info){
             current=current.link;
         }
         newNode.link=current.link;
@@ -190,7 +190,7 @@ class Int_Circular_LinkedList{
             return;
         }
         current=first;
-        for (int i = 1; i < index - 1; i++) {
+        for (int i = 1; i < index - 1 && current != last; i++) {
             current = current.link;
         }
         newNode.link=current.link;
@@ -212,7 +212,7 @@ class Int_Circular_LinkedList{
             return;
         }
         Node current=first;
-        while((current.link).link!=first){
+        while(current.link!=last){
             current=current.link;
         }
         current.link=first;
@@ -242,7 +242,7 @@ class Int_Circular_LinkedList{
         }
         else if(index==c){
             current=first;
-            while((current.link).link!=first){
+            while(current.link!=last){
                 current=current.link;
             }
             current.link=first;
@@ -278,12 +278,12 @@ class Int_Circular_LinkedList{
             return;
         }
         current=first;
-        while(current.link!=first){
-            if(newNode.info==current.link.info){
-                current.link=(current.link).link;
+        while (current.link != first) {
+            if (current.link.info == data) {
+                current.link = current.link.link;
                 return;
             }
-            current=current.link;
+            current = current.link;
         }
     }
 

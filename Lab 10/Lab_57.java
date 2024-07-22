@@ -170,32 +170,46 @@ class Int_LinkedList{
         first=first.link;
     }
 
-     protected void deleteFromLastPosition(){
-         if(first==null){
-             System.out.println("Empty LinkedList...");
-             return;
-         }
-         Node current=first;
-         while((current.link).link!=null){
-             current=current.link;
-         }
-         current.link=null;
-    }
-
-    // user enters 1 based index :-
-    protected void deleteFromSpecificPosition(int index){
-        if(first==null){
+    protected void deleteFromLastPosition() {
+        if (first == null) {
             System.out.println("Empty LinkedList...");
             return;
         }
-        Node current=first;
-        int currentIndex=1;
-        while(currentIndex<index-1 && current.link!=null){
-            current=current.link;
+        if (first.link == null) { // Only one element case
+            first = null;
+            return;
+        }
+        Node current = first;
+        while (current.link != null && current.link.link != null) {
+            current = current.link;
+        }
+        current.link = null;
+    }
+
+    protected void deleteFromSpecificPosition(int index) {
+        if (first == null) {
+            System.out.println("Empty LinkedList...");
+            return;
+        }
+        if (index <= 0) {
+            System.out.println("Invalid index.");
+            return;
+        }
+        if (index == 1) {
+            first = first.link;
+            return;
+        }
+        Node current = first;
+        int currentIndex = 1;
+        while (currentIndex < index - 1 && current.link != null) {
+            current = current.link;
             currentIndex++;
         }
-        assert current.link != null;
-        current.link=(current.link).link;
+        if (current.link == null) {
+            System.out.println("Index out of bounds.");
+            return;
+        }
+        current.link = current.link.link;
     }
 
     protected void deleteGivenDataFromLinkedList(int data){
@@ -227,19 +241,21 @@ class Int_LinkedList{
     }
 
     protected void displayLinkedList() {
-        if(first==null){
+        if (first == null) {
             System.out.println("Empty LinkedList...");
             return;
         }
         Node current = first;
-        String str="";
-        System.out.print("LinkedList : [");
+        StringBuilder sb = new StringBuilder();
+        sb.append("LinkedList : [");
         while (current != null) {
-            str += current.info+", ";
+            sb.append(current.info);
+            if (current.link != null) {
+                sb.append(", ");
+            }
             current = current.link;
         }
-        str=str.substring(0, str.length()-2);
-        str += "]";
-        System.out.println(str);
+        sb.append("]");
+        System.out.println(sb);
     }
 }

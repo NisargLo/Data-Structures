@@ -8,5 +8,6 @@ class Int_LinkedList - Lab_57
 class Stack_Using_LinkedList - Lab_60
 class Queue_Using_LinkedList - Lab_61
 class Int_Circular_LinkedList - Lab_71
+class String_LinkedList - Lab_75
 class Doubly_Node - Lab_72
 class Int_Doubly_LinkedList - Lab_72
