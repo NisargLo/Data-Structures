@@ -32,7 +32,7 @@ public class Lab_64 {
         Node current=ill.first;
         while(current!=null){
             next=current.link;
-            current.link=previous;
+            current.link=previous; //Reverse Code
             previous=current;
             current=next;
         }
