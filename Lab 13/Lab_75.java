@@ -20,7 +20,7 @@ public class Lab_75 {
             System.out.println("Enter 6 to delete song, which is at last position in playlist :");
             System.out.println("Enter 7 to delete song, which is at specific position in playlist :");
             System.out.println("Enter 8 to delete given song in playlist :");
-            System.out.println("Enter 9 to delete aplaylist songs in playlist :");
+            System.out.println("Enter 9 to delete all songs in playlist :");
             System.out.println("Enter 10 to check if playlist is empty or not :");
             System.out.println("Enter 11 to display playlist :");
             System.out.println("Enter -1 to exit music player application :");
@@ -86,7 +86,7 @@ public class Lab_75 {
                     break;
 
                 case -1:
-                    System.out.println("Program Over...");
+                    System.out.println("Music Player Program Over...");
                     break;
 
                 default:
@@ -135,13 +135,13 @@ class String_LinkedList{
 
     protected void insertAtOrder(String data) {
         Music_Node newMusic_Node = new Music_Node(data);
-        if (first == null || newMusic_Node.info.charAt(0) <= first.info.charAt(0)) {
+        if (first == null || newMusic_Node.info.toLowerCase().charAt(0) <= first.info.toLowerCase().charAt(0)) {
             newMusic_Node.link = first;
             first = newMusic_Node;
             return;
         }
         Music_Node current = first;
-        while (current.link != null && newMusic_Node.info.charAt(0) >= current.link.info.charAt(0)) {
+        while (current.link != null && newMusic_Node.info.toLowerCase().charAt(0) >= current.link.info.toLowerCase().charAt(0)) {
             current = current.link;
         }
         newMusic_Node.link = current.link;
