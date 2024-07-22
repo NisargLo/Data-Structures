@@ -1,7 +1,7 @@
 /*
     Write a menu driven program to implement following operations on the doubly linked list.
-        Insert a node at the front(head) of the linked list.
-        Insert a node at the back(tail) of the linked list. (Home Work)
+        Insert a node at the front(first) of the linked list.
+        Insert a node at the back(last) of the linked list. (Home Work)
         Delete a node from specified position.
         Display all nodes. (Home Work)
  */
@@ -24,8 +24,8 @@ public class Lab_72 {
             System.out.println("Enter 8 for deleteGivenDataFromDoublyLinkedList() :");
             System.out.println("Enter 9 for deleteAllNodes() :");
             System.out.println("Enter 10 for isEmpty() :");
-            System.out.println("Enter 11 for display_headToTail_DoublyLinkedList() :");
-            System.out.println("Enter 12 for display_tailToHead_DoublyLinkedList() :");
+            System.out.println("Enter 11 for display_firstTolast_DoublyLinkedList() :");
+            System.out.println("Enter 12 for display_lastTofirst_DoublyLinkedList() :");
             System.out.println("Enter -1 to exit :");
             choice = sc.nextInt();
             switch (choice) {
@@ -84,11 +84,11 @@ public class Lab_72 {
                     break;
 
                 case 11:
-                    dll.display_headToTail_DoublyLinkedList();
+                    dll.display_firstTolast_DoublyLinkedList();
                     break;
 
                 case 12:
-                    dll.display_tailToHead_DoublyLinkedList();
+                    dll.display_lastTofirst_DoublyLinkedList();
                     break;
 
                 case -1:
@@ -121,47 +121,47 @@ class Doubly_Node {
 }
 
 class Int_Doubly_LinkedList{
-    Doubly_Node head=null;
-    Doubly_Node tail=null;
+    Doubly_Node first=null;
+    Doubly_Node last=null;
 
     protected void insertAtFirstPosition(int data){
         Doubly_Node newNode=new Doubly_Node(data);
-        if(head==null){
-            head=newNode;
-            tail=newNode;
+        if(first==null){
+            first=newNode;
+            last=newNode;
             return;
         }
-        newNode.next=head;
-        head.previous=newNode;
-        head=newNode;
+        newNode.next=first;
+        first.previous=newNode;
+        first=newNode;
     }
 
     protected void insertAtLastPosition(int data){
         Doubly_Node newNode=new Doubly_Node(data);
-        if(head==null){
-            head=newNode;
-            tail=newNode;
+        if(first==null){
+            first=newNode;
+            last=newNode;
             return;
         }
-        tail.next=newNode;
-        newNode.previous=tail;
-        tail=newNode;
+        last.next=newNode;
+        newNode.previous=last;
+        last=newNode;
     }
 
     protected void insertAtOrder(int data) {
         Doubly_Node newNode=new Doubly_Node(data);
-        if(head==null){
-            head=newNode;
-            tail=newNode;
+        if(first==null){
+            first=newNode;
+            last=newNode;
             return;
         }
-        if(newNode.info<head.info){
-            newNode.next=head;
-            head.previous=newNode;
-            head=newNode;
+        if(newNode.info<first.info){
+            newNode.next=first;
+            first.previous=newNode;
+            first=newNode;
             return;
         }
-        Doubly_Node current=head;
+        Doubly_Node current=first;
         while(current.next!=null && newNode.info>=current.next.info){
             current=current.next;
         }
@@ -174,22 +174,22 @@ class Int_Doubly_LinkedList{
         while(current.next!=null){
             current=current.next;
         }
-        tail=current;
+        last=current;
     }
 
     // user enters 1 based index :-
     protected void insertAtSpecificPosition(int index, int data){
         Doubly_Node newNode=new Doubly_Node(data);
-        if(head==null){
+        if(first==null){
             if(index!=1){
                 System.out.println("Although you have written index - "+index+"\nInserted at first position as Doubly LinkedList was empty.");
             }
-            head=newNode;
-            tail=newNode;
+            first=newNode;
+            last=newNode;
             return;
         }
         int c=1;
-        Doubly_Node current=head;
+        Doubly_Node current=first;
         while(current.next!=null){
             current=current.next;
             c++;
@@ -199,18 +199,18 @@ class Int_Doubly_LinkedList{
             return;
         }
         if (index==1) {
-            newNode.next=head;
-            head.previous=newNode;
-            head=newNode;
+            newNode.next=first;
+            first.previous=newNode;
+            first=newNode;
             return;
         }
         if(index==c+1){
-            tail.next=newNode;
-            newNode.previous=tail;
-            tail=newNode;
+            last.next=newNode;
+            newNode.previous=last;
+            last=newNode;
             return;
         }
-        current=head;
+        current=first;
         for(int i=1;i<index-1;i++){
             current=current.next;
         }
@@ -221,50 +221,50 @@ class Int_Doubly_LinkedList{
     }
 
     protected void deleteFromFirstPosition(){
-        if(head==null){
+        if(first==null){
             System.out.println("Empty Doubly LinkedList...");
             return;
         }
-        if(head.next==null){
-            head=null;
-            tail=null;
+        if(first.next==null){
+            first=null;
+            last=null;
             return;
         }
-        head=head.next;
-        head.previous=null;
+        first=first.next;
+        first.previous=null;
     }
 
     protected void deleteFromLastPosition(){
-        if(tail==null){
+        if(last==null){
             System.out.println("Empty Doubly LinkedList...");
             return;
         }
-        if(tail.previous==null){
-            head=null;
-            tail=null;
+        if(last.previous==null){
+            first=null;
+            last=null;
             return;
         }
-        tail=tail.previous;
-        tail.next=null;
+        last=last.previous;
+        last.next=null;
     }
 
     // user enters 1 based index :-
     protected void deleteFromSpecificPosition(int index){
-        if(head==null){
+        if(first==null){
             System.out.println("Empty Doubly LinkedList...");
             return;
         }
         if(index==1){
-            if(head.next==null){
-                head=null;
-                tail=null;
+            if(first.next==null){
+                first=null;
+                last=null;
                 return;
             }
-            head=head.next;
-            head.previous=null;
+            first=first.next;
+            first.previous=null;
             return;
         }
-        Doubly_Node current=head;
+        Doubly_Node current=first;
         int c=1;
         while(current.next!=null){
             current=current.next;
@@ -275,16 +275,16 @@ class Int_Doubly_LinkedList{
             return;
         }
         if(index==c+1){
-            if(tail.previous==null){
-                head=null;
-                tail=null;
+            if(last.previous==null){
+                first=null;
+                last=null;
                 return;
             }
-            tail=tail.previous;
-            tail.next=null;
+            last=last.previous;
+            last.next=null;
             return;
         }
-        current=head;
+        current=first;
         for(int i=1;i<index-1;i++){
             current=current.next;
         }
@@ -295,26 +295,26 @@ class Int_Doubly_LinkedList{
     }
 
     protected void deleteGivenDataFromDoublyLinkedList(int data){
-        if(head==null){
+        if(first==null){
             System.out.println("Empty Doubly LinkedList...");
             return;
         }
-        if(head.next==null){
-            head=null;
-            tail=null;
+        if(first.next==null){
+            first=null;
+            last=null;
             return;
         }
-        if(data==head.info){
-            head=head.next;
-            head.previous=null;
+        if(data==first.info){
+            first=first.next;
+            first.previous=null;
             return;
         }
-        if(data==tail.info){
-            tail=tail.previous;
-            tail.next=null;
+        if(data==last.info){
+            last=last.previous;
+            last.next=null;
             return;
         }
-        Doubly_Node current=head;
+        Doubly_Node current=first;
         while(current.next.info!=data){
             current=current.next;
         }
@@ -325,21 +325,21 @@ class Int_Doubly_LinkedList{
     }
 
     protected void deleteAllNodes() {
-        head=null;
-        tail=null;
+        first=null;
+        last=null;
     }
 
     protected boolean isEmpty() {
-        return (head==null && tail==null);
+        return (first==null && last==null);
     }
 
-    protected void display_headToTail_DoublyLinkedList() {
-        if(head==null){
+    protected void display_firstTolast_DoublyLinkedList() {
+        if(first==null){
             System.out.println("Empty Doubly LinkedList...");
             return;
         }
-        Doubly_Node current = head;
-        System.out.print("Doubly LinkedList (Head to Tail) : [");
+        Doubly_Node current = first;
+        System.out.print("Doubly LinkedList (first to last) : [");
         do {
             System.out.print(current.info);
             current = current.next;
@@ -350,13 +350,13 @@ class Int_Doubly_LinkedList{
         System.out.println("]");
     }
 
-    protected void display_tailToHead_DoublyLinkedList() {
-        if(tail==null){
+    protected void display_lastTofirst_DoublyLinkedList() {
+        if(last==null){
             System.out.println("Empty Doubly LinkedList...");
             return;
         }
-        Doubly_Node current = tail;
-        System.out.print("Doubly LinkedList (Tail to Head) : [");
+        Doubly_Node current = last;
+        System.out.print("Doubly LinkedList (last to first) : [");
         do {
             System.out.print(current.info);
             current = current.previous;
