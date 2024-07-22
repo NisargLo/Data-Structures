@@ -74,7 +74,7 @@ public class Lab_75 {
                     break;
 
                 case 9:
-                    playlist.deleteAllMusic_Nodes();
+                    playlist.deleteAllString_Nodes();
                     break;
 
                 case 10:
@@ -96,71 +96,71 @@ public class Lab_75 {
     }
 }
 
-class Music_Node {
+class String_Node {
     public String info;
-    public Music_Node link;
+    public String_Node link;
 
-    public Music_Node(String data){
+    public String_Node(String data){
         this.info=data;
         this.link=null;
     }
 
-    public Music_Node(String data, Music_Node anotherLink){
+    public String_Node(String data, String_Node anotherLink){
         this.info=data;
         this.link=anotherLink;
     }
 }
 
 class String_LinkedList{
-    Music_Node first=null;
+    String_Node first=null;
 
     protected void insertAtFirstPosition(String data){
-        Music_Node newMusic_Node=new Music_Node(data);
-        newMusic_Node.link=first;
-        first=newMusic_Node;
+        String_Node newString_Node=new String_Node(data);
+        newString_Node.link=first;
+        first=newString_Node;
     }
 
     protected void insertAtLastPosition(String data){
-        Music_Node newMusic_Node=new Music_Node(data);
+        String_Node newString_Node=new String_Node(data);
         if(first==null){
-            first=newMusic_Node;
+            first=newString_Node;
             return;
         }
-        Music_Node current=first;
+        String_Node current=first;
         while(current.link!=null){
             current=current.link;
         }
-        current.link=newMusic_Node;
+        current.link=newString_Node;
     }
 
     protected void insertAtOrder(String data) {
-        Music_Node newMusic_Node = new Music_Node(data);
-        if (first == null || newMusic_Node.info.toLowerCase().charAt(0) <= first.info.toLowerCase().charAt(0)) {
-            newMusic_Node.link = first;
-            first = newMusic_Node;
+        String_Node newString_Node = new String_Node(data);
+        if (first == null || newString_Node.info.toLowerCase().charAt(0) <= first.info.toLowerCase().charAt(0)) {
+            newString_Node.link = first;
+            first = newString_Node;
             return;
         }
-        Music_Node current = first;
-        while (current.link != null && newMusic_Node.info.toLowerCase().charAt(0) >= current.link.info.toLowerCase().charAt(0)) {
+        String_Node current = first;
+        while (current.link != null && newString_Node.info.toLowerCase().charAt(0) >= current.link.info.toLowerCase().charAt(0)) {
             current = current.link;
         }
-        newMusic_Node.link = current.link;
-        current.link = newMusic_Node;
+        newString_Node.link = current.link;
+        current.link = newString_Node;
     }
 
     // user enters 1 based index :-
     protected void insertAtSpecificPosition(int index, String data) {
-        Music_Node newMusic_Node = new Music_Node(data);
+        String_Node newString_Node = new String_Node(data);
         if (index <= 0) {
             System.out.println("Invalid index.");
             return;
         }
         if (index == 1) {
-            newMusic_Node.link = first;
-            first = newMusic_Node;
+            newString_Node.link = first;
+            first = newString_Node;
             return;
         }
-        Music_Node current = first;
+        String_Node current = first;
         int currentIndex = 1;
         while (current != null && currentIndex < index - 1) {
             current = current.link;
@@ -170,8 +170,8 @@ class String_LinkedList{
             System.out.println("Index out of bounds.");
             return;
         }
-        newMusic_Node.link = current.link;
-        current.link = newMusic_Node;
+        newString_Node.link = current.link;
+        current.link = newString_Node;
     }
 
     protected void deleteFromFirstPosition(){
@@ -191,7 +191,7 @@ class String_LinkedList{
             first = null;
             return;
         }
-        Music_Node current=first;
+        String_Node current=first;
         while(current.link != null && (current.link).link!=null){
             current=current.link;
         }
@@ -212,7 +212,7 @@ class String_LinkedList{
             first = first.link;
             return;
         }
-        Music_Node current = first;
+        String_Node current = first;
         int currentIndex = 1;
         while (currentIndex < index - 1 && current.link != null) {
             current = current.link;
@@ -234,7 +234,7 @@ class String_LinkedList{
             first=first.link;
             return;
         }
-        Music_Node current=first;
+        String_Node current=first;
         while(current.link!=null && !current.link.info.equals(data)){
             current=current.link;
         }
@@ -245,7 +245,7 @@ class String_LinkedList{
         current.link=(current.link).link;
     }
 
-    protected void deleteAllMusic_Nodes() {
+    protected void deleteAllString_Nodes() {
         first=null;
     }
 
@@ -258,7 +258,7 @@ class String_LinkedList{
             System.out.println("Empty LinkedList...");
             return;
         }
-        Music_Node current = first;
+        String_Node current = first;
         System.out.print("LinkedList : [");
         while (current != null) {
             System.out.print(current.info);
