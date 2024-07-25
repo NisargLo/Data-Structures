@@ -54,8 +54,9 @@ class Char_Stack {
             System.out.println("Stack Underflow");
             return '0';
         }
+        char data = stack_array[top];
         top--;
-        return stack_array[top + 1];
+        return data;
     }
 
     // user enters 1 based index :-

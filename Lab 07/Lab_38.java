@@ -24,13 +24,19 @@ public class Lab_38 {
                     break;
 
                 case "pop":
-                    System.out.println("pop() - " + S.pop());
+                    int pop=S.pop();
+                    if(pop!=Integer.MIN_VALUE){
+                        System.out.println("pop() - " + pop);
+                    }
                     break;
 
                 case "peep":
                     System.out.println("Enter Index :");
                     int indexPeep = sc.nextInt();
-                    System.out.println("peep() - " + S.peep(indexPeep));
+                    int peep=S.peep(indexPeep);
+                    if(peep!=Integer.MIN_VALUE){
+                        System.out.println("pop() - " + peep);
+                    }
                     break;
 
                 case "change":
@@ -87,17 +93,18 @@ class Int_Stack {
     protected int pop() {
         if (top < 0) {
             System.out.println("Stack Underflow");
-            return 0;
+            return Integer.MIN_VALUE;
         }
+        int data = stack_array[top];
         top--;
-        return stack_array[top + 1];
+        return data;
     }
 
     // user enters 1 based index :-
     protected int peep(int index) {
         if (top + 1 - index < 0) {
             System.out.println("Stack Underflow");
-            return 0;
+            return Integer.MIN_VALUE;
         }
         return stack_array[top + 1 - index];
     }
@@ -112,11 +119,11 @@ class Int_Stack {
     }
 
     protected void display() {
-        if(isEmpty()){
-            System.out.println("Empty Stack...");
+        if (isEmpty()) {
+            System.out.println("Empty Stack");
             return;
         }
-        System.out.print("[");
+        System.out.print("Stack - [");
         for (int i = 0; i < top; i++) {
             System.out.print(stack_array[i] + ", ");
         }

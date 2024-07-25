@@ -6,26 +6,37 @@ public class Lab_61 {
      public static void main(String[] args) {
           Scanner sc = new Scanner(System.in);
           Queue_Using_LinkedList qul=new Queue_Using_LinkedList();
-          String choice = "";
-          while (!choice.equalsIgnoreCase("None")) {
-               System.out.println("\nEnter Operation (add, remove, display, none) :");
-               choice = sc.next();
+          int choice = 0;
+          while (choice != -1) {
+               System.out.println("\nEnter 1 for enqueue() :");
+               System.out.println("Enter 2 for dequeue() :");
+               System.out.println("Enter 3 for display() :");
+               System.out.println("Enter 4 for isEmpty() :");
+               System.out.println("Enter -1 to exit :");
+               choice = sc.nextInt();
                switch (choice) {
-                    case "add":
+                    case 1:
                          System.out.println("Enter Number :");
-                         int num1 = sc.nextInt();
-                         qul.add(num1);
+                         int num = sc.nextInt();
+                         qul.enqueue(num);
                          break;
 
-                    case "remove":
-                         qul.remove();
+                    case 2:
+                         int dequeue= qul.dequeue();
+                         if(dequeue!=Integer.MIN_VALUE){
+                              System.out.println("dequeue() - "+dequeue);
+                         }
                          break;
 
-                    case "display":
+                    case 3:
                          qul.display();
                          break;
 
-                    case "none":
+                    case 4:
+                         System.out.println(qul.isEmpty());
+                         break;
+
+                    case -1:
                          System.out.println("Program Over...");
                          break;
 
@@ -36,41 +47,47 @@ public class Lab_61 {
      }
 }
 
-class Queue_Using_LinkedList{
-     Node first=null;
+class Queue_Using_LinkedList {
+     Node first = null;
 
-     protected void add(int data){
-          Node newNode=new Node(data);
-          newNode.link=first;
-          first=newNode;
+     protected void enqueue(int data) {
+          Node newNode = new Node(data);
+          if (first == null) {
+               first = newNode;
+               return;
+          }
+          Node current = first;
+          while (current.link != null) {
+               current = current.link;
+          }
+          current.link = newNode;
      }
 
-     protected void remove(){
-          if(first==null){
+     protected int dequeue() {
+          if (first == null) {
+               System.out.println("Empty Queue...");
+               return Integer.MIN_VALUE;
+          }
+          int removedValue = first.info;
+          first = first.link;
+          return removedValue;
+     }
+
+     protected void display() {
+          if (first == null) {
                System.out.println("Empty Queue...");
                return;
           }
           Node current = first;
-          while ((current.link).link != null) {
+          System.out.print("Queue - [");
+          while (current.link != null) {
+               System.out.print(current.info+", ");
                current = current.link;
           }
-          current.link = null;
+          System.out.println(current.info+"]");
      }
 
-     protected void display(){
-          if(first==null){
-               System.out.println("Empty Queue...");
-               return;
-          }
-          Node current = first;
-          String str="";
-          System.out.print("Queue : [");
-          while (current != null) {
-               str += current.info+", ";
-               current = current.link;
-          }
-          str=str.substring(0, str.length()-2);
-          str += "]";
-          System.out.println(str);
+     protected boolean isEmpty() {
+          return first == null;
      }
 }

@@ -18,13 +18,19 @@ public class Lab_60 {
                     break;
 
                 case "pop":
-                    System.out.println("pop() - " + S.pop());
+                    int pop=S.pop();
+                    if(pop!=Integer.MIN_VALUE){
+                        System.out.println("pop() - " + pop);
+                    }
                     break;
 
                 case "peep":
                     System.out.println("Enter Index :");
                     int indexPeep = sc.nextInt();
-                    System.out.println("peep() - " + S.peep(indexPeep));
+                    int peep=S.peep(indexPeep);
+                    if(peep!=Integer.MIN_VALUE){
+                        System.out.println("pop() - " + peep);
+                    }
                     break;
 
                 case "change":
@@ -77,7 +83,8 @@ class Stack_Using_LinkedList {
 
     protected int pop() {
         if (first == null) {
-            return 0;
+            System.out.println("Empty Stack...");
+            return Integer.MIN_VALUE;
         }
         Node current = first;
         while ((current.link).link != null) {
@@ -91,7 +98,8 @@ class Stack_Using_LinkedList {
     // user enters 1 based index :-
     protected int peep(int index) {
         if (first == null) {
-            return -1;
+            System.out.println("Empty Stack...");
+            return Integer.MIN_VALUE;
         }
         Node current = first;
         int count = 1;
@@ -116,6 +124,7 @@ class Stack_Using_LinkedList {
     protected void change(int index, int X) {
         if (first == null) {
             System.out.println("Empty Stack...");
+            return;
         }
         Node current = first;
         int count = 1;
@@ -141,15 +150,12 @@ class Stack_Using_LinkedList {
             return;
         }
         Node current = first;
-        String str = "";
-        str += "[";
-        while (current != null) {
-            str += current.info + ", ";
+        System.out.print("Stack - [");
+        while (current.link != null) {
+            System.out.print(current.info + ", ");
             current = current.link;
         }
-        str = str.substring(0, str.length() - 2);
-        str += "]\n";
-        System.out.println("Stack - "+str);
+        System.out.println(current.info+"]");
     }
 
     protected boolean isEmpty() {
