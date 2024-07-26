@@ -1,4 +1,4 @@
-Important data structures classes used in this lab & their locations :-
+Observable data structure classes used in this lab & their locations: -
 
 class Int_Stack - Lab_38
 class Char_Stack - Lab_39

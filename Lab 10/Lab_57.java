@@ -246,16 +246,11 @@ class Int_LinkedList{
             return;
         }
         Node current = first;
-        StringBuilder sb = new StringBuilder();
-        sb.append("LinkedList : [");
-        while (current != null) {
-            sb.append(current.info);
-            if (current.link != null) {
-                sb.append(", ");
-            }
+        System.out.print("LinkedList : [");
+        while (current.link != null) {
+            System.out.print(current.info+", ");
             current = current.link;
         }
-        sb.append("]");
-        System.out.println(sb);
+        System.out.println(current.info+"]");
     }
 }
