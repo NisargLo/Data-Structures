@@ -1,5 +1,5 @@
 /*
-      Write a menu driven program to implement following operations on a circular queue using an Array
+     Write a menu driven program to implement following operations on a circular queue using an Array
           Insert
           Delete
           Display all elements of the queue
@@ -49,8 +49,8 @@ public class Lab_51 {
 
 class Int_Circular_Queue {
      private int front = -1;
-    private int rear = -1;
-    private final int size;
+     private int rear = -1;
+     private final int size;
      private final int[] arr;
 
      protected Int_Circular_Queue(int size) {

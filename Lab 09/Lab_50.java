@@ -49,8 +49,8 @@ public class Lab_50 {
 
 class Int_Queue {
      private int front = -1;
-    private int rear = -1;
-    private final int size;
+     private int rear = -1;
+     private final int size;
      private final int[] arr;
 
      protected Int_Queue(int size) {
