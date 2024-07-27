@@ -20,10 +20,10 @@ public class Lab_69 {
             }
             ll.insertAtLastPosition(n);
         }
-        System.out.print("\nBefore Sorting - ");
+        System.out.print("\nBefore filtering duplicates - ");
         ll.displayLinkedList();
         deleteDuplicates(ll.first);
-        System.out.print("\nAfter Sorting - ");
+        System.out.print("\nAfter filtering duplicates - ");
         ll.displayLinkedList();
     }
 
