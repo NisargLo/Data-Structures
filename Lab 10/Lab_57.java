@@ -175,7 +175,7 @@ class Int_LinkedList{
             System.out.println("Empty LinkedList...");
             return;
         }
-        if (first.link == null) { // Only one element case
+        if (first.link == null) { // Case with only one element
             first = null;
             return;
         }

@@ -106,7 +106,7 @@ class Int_Circular_LinkedList{
         if(first==null){
             first=newNode;
             last=newNode;
-            newNode.link=newNode;
+            newNode.link = first;
             return;
         }
         newNode.link=first;
@@ -119,7 +119,7 @@ class Int_Circular_LinkedList{
         if(first==null){
             first=newNode;
             last=newNode;
-            newNode.link=newNode;
+            newNode.link = first;
             return;
         }
         last.link=newNode;
@@ -132,7 +132,7 @@ class Int_Circular_LinkedList{
         if(first==null){
             first=newNode;
             last=newNode;
-            newNode.link=newNode;
+            newNode.link = first;
             return;
         }
         if(newNode.info<first.info){
@@ -164,7 +164,7 @@ class Int_Circular_LinkedList{
             }
             first=newNode;
             last=newNode;
-            newNode.link=newNode;
+            newNode.link = first;
             return;
         }
         Node current=first;
