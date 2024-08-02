@@ -5,7 +5,7 @@ import java.util.*;
 public class Lab_21 {
     public static void main(String[] args) {
         Scanner sc = new Scanner(System.in);
-        System.out.println("How many numbers will you enter :");
+        System.out.println("Enter size of array:");
         int n = sc.nextInt(), i, j;
         int[] a = new int[n];
         for (i = 0; i < a.length; i++) {
@@ -29,8 +29,7 @@ public class Lab_21 {
                 b[i] = a[j];
             }
         }
-        for (i = 0; i < b.length; i++) {
-            System.out.println("No. " + (i + 1) + " = " + b[i]);
-        }
+        System.out.println("Array before insertion: "+Arrays.toString(a));
+        System.out.println("Array after insertion: "+Arrays.toString(b));
     }
 }

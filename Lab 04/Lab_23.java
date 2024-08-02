@@ -5,7 +5,7 @@ import java.util.*;
 public class Lab_23 {
     public static void main(String[] args) {
         Scanner sc=new Scanner(System.in);
-        System.out.println("How many numbers will you enter :");
+        System.out.println("Enter size of array:");
         int n=sc.nextInt(),i,j;
         int getIndex=0;
         int[] a=new int[n];
@@ -25,6 +25,9 @@ public class Lab_23 {
                 getIndex=i;
                 break;
             }
+            else{
+                getIndex=i+1;
+            }
         }
         for (i = 0, j = 0; i < b.length; i++, j++) {
             if (getIndex == i) {
@@ -34,9 +37,7 @@ public class Lab_23 {
                 b[i] = a[j];
             }
         }
-        System.out.println("Updated Array :-");
-        for(i=0;i<b.length;i++){
-            System.out.println("No. "+(i+1)+" : "+b[i]);
-        }
+        System.out.println("Array before insertion: "+Arrays.toString(a));
+        System.out.println("Array after insertion: "+Arrays.toString(b));
     }
 }

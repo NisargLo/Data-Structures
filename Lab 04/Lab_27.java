@@ -5,20 +5,21 @@ import java.util.*;
 public class Lab_27 {
     public static void main(String[] args) {
         Scanner sc=new Scanner(System.in);
-        String res=new String("");
+        StringBuilder res= new StringBuilder();
         System.out.println("Enter string :");
         String s=sc.nextLine();
+        System.out.println("String before replacing: "+s);
         for(int i=0;i<s.length();i++){
             if(s.charAt(i)>='a' && s.charAt(i)<='z'){
-                 res+=(s.charAt(i)+"").toUpperCase();
+                 res.append((s.charAt(i) + "").toUpperCase());
             }
             else if(s.charAt(i)>='A' && s.charAt(i)<='Z'){
-                res+=(s.charAt(i)+"").toLowerCase();
+                res.append((s.charAt(i) + "").toLowerCase());
             }
             else{
-                res+=s.charAt(i);
+                res.append(s.charAt(i));
             }
         }
-        System.out.println("Resultant String : "+res);
+        System.out.println("String after replacing: "+res);
     }
 }

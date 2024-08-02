@@ -3,7 +3,7 @@ import java.util.*;
 public class Lab_22 {
     public static void main(String[] args) {
         Scanner sc = new Scanner(System.in);
-        System.out.println("How many numbers will you enter :");
+        System.out.println("Enter size of array:");
         int n = sc.nextInt();
         int[] a = new int[n];
         for (int i = 0; i < a.length; i++) {
@@ -22,9 +22,7 @@ public class Lab_22 {
                 b[j++] = a[i];
             }
         }
-        System.out.println("Array after deletion:");
-        for (int i = 0; i < b.length; i++) {
-            System.out.println("No. " + (i + 1) + " = " + b[i]);
-        }
+        System.out.println("Array before deletion: "+Arrays.toString(a));
+        System.out.println("Array after deletion: "+Arrays.toString(b));
     }
 }
