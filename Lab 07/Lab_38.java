@@ -72,9 +72,9 @@ public class Lab_38 {
 }
 
 class Int_Stack {
-    int[] stack_array;
+    private final int[] stack_array;
     private int top = -1;
-    int size;
+    private final int size;
 
     protected Int_Stack(int size) {
         this.size=size;

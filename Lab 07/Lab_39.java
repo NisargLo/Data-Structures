@@ -31,9 +31,9 @@ public class Lab_39 {
 }
 
 class Char_Stack {
-    char[] stack_array;
+    private final char[] stack_array;
     private int top = -1;
-    int size;
+    private final int size;
 
     protected Char_Stack(int size) {
         this.size=size;
