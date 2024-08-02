@@ -1,4 +1,4 @@
-// Write a program to implement Bubble sort using Array.
+// Write a program to implement Bubble Sort using Array.
 
 import java.util.Arrays;
 import java.util.Scanner;
@@ -19,10 +19,9 @@ public class Lab_92 {
     }
 
     private static void bubble_Sort(int[] a){
-        int temp;
         for(int i=0;i<a.length;i++){
             for(int j=i+1;j<a.length;j++){
-                temp=a[j];
+                int temp=a[j];
                 a[j]=a[i];
                 a[i]=temp;
             }
