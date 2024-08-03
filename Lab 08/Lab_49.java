@@ -1,9 +1,9 @@
 /*
     Solve - https://www.codechef.com/DSAPREP_10/problems/STKSORT
-    (link is not working, so question was changed by sir)
+    (the above link is not working, so this question was changed by sir)
 
 
-    Leetcode :- 155. Min Stack
+    Leetcode: - 155. Min Stack
 
     Design a stack that supports push, pop, top, and retrieving the minimum element in constant time.
 
@@ -34,13 +34,11 @@
             minStack.getMin(); // return -2
 
     Constraints:
-        -231 <= val <= 231 - 1
-        Methods pop, top and getMin operations will always be called on non-empty stacks.
+        -231 <= val <= 231-1
+        Methods pop, top, and getMin operations will always be called on non-empty stacks.
         At most 3 * 104 calls will be made to push, pop, top, and getMin.
  */
 
-public class Lab_49 {
-    public static void main(String[] args) {
+class MinStack {
 
-    }
 }
