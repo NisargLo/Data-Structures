@@ -18,7 +18,8 @@ public class Lab_50 {
                System.out.println("\nEnter 1 for enqueue() :");
                System.out.println("Enter 2 for dequeue() :");
                System.out.println("Enter 3 for display() :");
-               System.out.println("Enter 4 for isEmpty() :");
+               System.out.println("Enter 4 for makeQueueEmpty():");
+               System.out.println("Enter 5 for isEmpty() :");
                System.out.println("Enter -1 to exit :");
                choice = sc.nextInt();
                switch (choice) {
@@ -37,7 +38,9 @@ public class Lab_50 {
 
                     case 3 -> q.display();
 
-                    case 4 -> System.out.println(q.isEmpty());
+                    case 4 -> q.makeQueueEmpty();
+
+                    case 5 -> System.out.println(q.isEmpty());
 
                     case -1 -> System.out.println("Program Over...");
 
@@ -97,6 +100,11 @@ class Int_Queue {
                System.out.print(arr[i] + ", ");
           }
           System.out.println("\b\b]");
+     }
+
+     protected void makeQueueEmpty(){
+          front = -1;
+          rear = -1;
      }
 
      protected boolean isEmpty(){

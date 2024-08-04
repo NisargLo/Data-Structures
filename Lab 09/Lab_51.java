@@ -18,7 +18,8 @@ public class Lab_51 {
                System.out.println("\nEnter 1 for enqueue() :");
                System.out.println("Enter 2 for dequeue() :");
                System.out.println("Enter 3 for display() :");
-               System.out.println("Enter 4 for isEmpty() :");
+               System.out.println("Enter 4 for makeQueueEmpty():");
+               System.out.println("Enter 5 for isEmpty() :");
                System.out.println("Enter -1 to exit :");
                choice = sc.nextInt();
                switch (choice) {
@@ -37,7 +38,9 @@ public class Lab_51 {
 
                     case 3 -> cq.display();
 
-                    case 4 -> System.out.println(cq.isEmpty());
+                    case 4 -> cq.makeQueueEmpty();
+
+                    case 5 -> System.out.println(cq.isEmpty());
 
                     case -1 -> System.out.println("Program Over...");
 
@@ -66,7 +69,7 @@ class Int_Circular_Queue {
           if (front == -1) {
                front = 0;
           }
-          rear=(++rear)%size;
+          rear=(rear+1)%size;
           arr[rear]=data;
      }
 
@@ -81,7 +84,7 @@ class Int_Circular_Queue {
                rear = -1;
           }
           else{
-               front=(++front)%size;
+               front=(front+1)%size;
           }
           return data;
      }
@@ -92,10 +95,15 @@ class Int_Circular_Queue {
                return;
           }
           System.out.print("Circular Queue - [");
-          for (int i=front; i!=rear; i=(++i)%size) {
+          for (int i=front; i!=rear; i=(i+1)%size) {
                System.out.print(arr[i] + ", ");
           }
           System.out.println(arr[rear]+"]");
+     }
+
+     protected void makeQueueEmpty(){
+          front = -1;
+          rear = -1;
      }
 
      protected boolean isEmpty(){
