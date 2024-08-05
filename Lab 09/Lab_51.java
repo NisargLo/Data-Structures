@@ -47,6 +47,7 @@ public class Lab_51 {
                     default -> System.out.println("Invalid choice.");
                }
           }
+          sc.close();
      }
 }
 
@@ -54,7 +55,7 @@ class Int_Circular_Queue {
      private int front = -1;
      private int rear = -1;
      private final int size;
-     private final int[] arr;
+     private int[] arr;
 
      protected Int_Circular_Queue(int size) {
           this.size=size;
@@ -90,7 +91,7 @@ class Int_Circular_Queue {
      }
 
      protected void display() {
-          if (front == -1) {
+          if (front == -1 || arr==null) {
                System.out.println("Queue is empty...");
                return;
           }
@@ -102,11 +103,12 @@ class Int_Circular_Queue {
      }
 
      protected void makeQueueEmpty(){
+          arr=null;
           front = -1;
           rear = -1;
      }
 
      protected boolean isEmpty(){
-          return front==-1 && rear==-1;
+          return (front==-1 && rear==-1) || arr==null;
      }
 }
