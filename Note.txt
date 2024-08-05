@@ -7,6 +7,7 @@ class Int_Queue - Lab_50
 class Int_Circular_Queue - Lab_51
 class Int_Doubled_Ended_Queue - Lab_52
 class Int_Priority_Queue - Lab_53
+class String_Circular_Queue - Lab_54
 class Node - Lab_56
 class Int_LinkedList - Lab_57
 class Stack_Using_LinkedList - Lab_60
