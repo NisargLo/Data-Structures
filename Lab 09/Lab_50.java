@@ -92,7 +92,7 @@ class Int_Queue {
      }
 
      protected void display() {
-          if (front == -1 || arr==null) {
+          if (front == -1) {
                System.out.println("Queue is empty...");
                return;
           }
@@ -110,6 +110,6 @@ class Int_Queue {
      }
 
      protected boolean isEmpty(){
-          return (front==-1 && rear==-1) || arr==null;
+          return front==-1 && rear==-1;
      }
 }
