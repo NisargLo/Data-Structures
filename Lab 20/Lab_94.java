@@ -13,22 +13,24 @@ public class Lab_94 {
             System.out.println("Enter element " + (i + 1) + ":");
             a[i] = sc.nextInt();
         }
-        System.out.println("Array before Selection Sort: "+ Arrays.toString(a));
+        System.out.println("Array before Selection Sort: " + Arrays.toString(a));
         selection_Sort(a);
-        System.out.println("Array after Selection Sort: "+ Arrays.toString(a));
+        System.out.println("Array after Selection Sort: " + Arrays.toString(a));
     }
 
-    private static void selection_Sort(int[] a){
-        for(int i=0;i<a.length;i++){
-            int minIndex=i;
-            for(int j=i+1;j<a.length;j++){
+    private static void selection_Sort(int[] a) {
+        for (int i = 0; i < a.length - 1; i++) {
+            int minIndex = i;
+            for (int j = i + 1; j < a.length; j++) {
                 if (a[minIndex] > a[j]) {
                     minIndex = j;
                 }
             }
-            int temp=a[minIndex];
-            a[minIndex]=a[i];
-            a[i]=temp;
+            if (minIndex != i) {
+                int temp = a[minIndex];
+                a[minIndex] = a[i];
+                a[i] = temp;
+            }
         }
     }
 }
