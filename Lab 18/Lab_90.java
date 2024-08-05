@@ -15,7 +15,7 @@ public class Lab_90 {
           System.out.println("Enter number to search:");
           int s = sc.nextInt();
           for (int i = 0; i < n; i++) {
-               if (a[i] == s) {
+               if (s==a[i]) {
                     System.out.println("Element found at index " + i);
                     return;
                }
