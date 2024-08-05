@@ -47,6 +47,7 @@ public class Lab_50 {
                     default -> System.out.println("Invalid choice.");
                }
           }
+          sc.close();
      }
 }
 
