@@ -13,17 +13,20 @@ public class Lab_92 {
             System.out.println("Enter element " + (i + 1) + ":");
             a[i] = sc.nextInt();
         }
-        System.out.println("Array before Bubble Sort: "+ Arrays.toString(a));
+        System.out.println("Array before Bubble Sort: " + Arrays.toString(a));
         bubble_Sort(a);
-        System.out.println("Array after Bubble Sort: "+ Arrays.toString(a));
+        System.out.println("Array after Bubble Sort: " + Arrays.toString(a));
+        sc.close();
     }
 
-    private static void bubble_Sort(int[] a){
-        for(int i=0;i<a.length;i++){
-            for(int j=i+1;j<a.length;j++){
-                int temp=a[j];
-                a[j]=a[i];
-                a[i]=temp;
+    private static void bubble_Sort(int[] a) {
+        for (int i = 0; i < a.length - 1; i++) {
+            for (int j = 0; j < a.length - i - 1; j++) {
+                if (a[j] > a[j + 1]) {
+                    int temp = a[j];
+                    a[j] = a[j + 1];
+                    a[j + 1] = temp;
+                }
             }
         }
     }
