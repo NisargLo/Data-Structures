@@ -70,7 +70,7 @@ class Int_Doubled_Ended_Queue{
     private int front = -1;
     private int rear = -1;
     private final int size;
-    private final int[] arr;
+    private int[] arr;
 
     protected Int_Doubled_Ended_Queue(int size) {
         this.size=size;
@@ -136,7 +136,7 @@ class Int_Doubled_Ended_Queue{
     }
 
     protected void display() {
-        if (front == -1) {
+        if (front == -1 || arr==null) {
             System.out.println("Queue is empty...");
             return;
         }
@@ -150,9 +150,10 @@ class Int_Doubled_Ended_Queue{
     protected void makeQueueEmpty(){
         front = -1;
         rear = -1;
+        arr=null;
     }
 
     protected boolean isEmpty(){
-        return front==-1 && rear==-1;
+        return (front==-1 && rear==-1) || arr==null;
     }
 }
