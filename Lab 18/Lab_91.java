@@ -19,7 +19,7 @@ public class Lab_91 {
           int h=n-1;
           while(l<=h){
                int m=(l+h)/2;
-               if(a[m]==s){
+               if(s==a[m]){
                     System.out.println("Element is found at index "+m+" (While Loop)");
                     break;
                }
