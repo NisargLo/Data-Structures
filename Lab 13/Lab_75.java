@@ -290,7 +290,7 @@ class String_LinkedList{
             current=current.link;
         }
         if(current.link==null){
-            System.out.println("No such element in LinkedList...");
+            System.out.println("No such element in playlist...");
             return;
         }
         current.link=(current.link).link;
