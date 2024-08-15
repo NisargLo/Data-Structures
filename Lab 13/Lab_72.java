@@ -1,9 +1,11 @@
 /*
     Write a menu driven program to implement following operations on the doubly linked list.
         Insert a node at the front(first) of the linked list.
-        Insert a node at the back(last) of the linked list. (Home Work)
+        Insert a node at the back(last) of the linked list.
+        (Homework)
         Delete a node from specified position.
-        Display all nodes. (Home Work)
+        Display all nodes.
+        (Homework)
  */
 
 import java.util.Scanner;
