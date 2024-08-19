@@ -1,21 +1,64 @@
 Observable data structure classes used in this lab & their locations: -
 
-class Int_Stack → Lab_38
-class Char_Stack → Lab_39
-class Int_Array_Stack → Lab_43
-class Int_Queue → Lab_50
-class Int_Circular_Queue → Lab_51
-class Int_Doubled_Ended_Queue → Lab_52
-class Int_Priority_Queue → Lab_53
-class String_Circular_Queue → Lab_54
-class Node → Lab_56
-class Int_LinkedList → Lab_57
-class Stack_Using_LinkedList → Lab_60
-class Queue_Using_LinkedList → Lab_61
-class Int_Circular_LinkedList → Lab_71
-class String_Node → Lab_75
-class String_LinkedList → Lab_75
-class Doubly_Node → Lab_72
-class Int_Doubly_LinkedList → Lab_72
+class Int_Stack → Lab_38.java
+class Char_Stack → Lab_39.java
+class Int_Array_Stack → Lab_43.java
+class Int_Queue → Lab_50.java
+class Int_Circular_Queue → Lab_51.java
+class Int_Doubled_Ended_Queue → Lab_52.java
+class Int_Priority_Queue → Lab_53.java
+class String_Circular_Queue → Lab_54.java
+class Node → Lab_56.java
+class Int_LinkedList → Lab_57.java
+class Stack_Using_LinkedList → Lab_60.java
+class Queue_Using_LinkedList → Lab_61.java
+class Int_Circular_LinkedList → Lab_71.java
+class String_Node → Lab_75.java.java
+class String_LinkedList → Lab_75.java
+class Doubly_Node → Lab_72.java
+class Int_Doubly_LinkedList → Lab_72.java
+class Int_Complete_Binary_Tree → Array_To_CompleteBinaryTree.java
 
 
+
+5. Quick Sort
+    Time Complexity:
+    Best Case: (O(n \log n))
+    Average Case: (O(n \log n))
+    Worst Case: (O(n^2))
+    Space Complexity: (O(\log n))
+    Description: Fast and efficient, but not stable. Uses divide-and-conquer.
+6. Heap Sort
+    Time Complexity:
+    Best Case: (O(n \log n))
+    Average Case: (O(n \log n))
+    Worst Case: (O(n \log n))
+    Space Complexity: (O(1))
+    Description: Efficient and in-place, but not stable.
+7. Counting Sort
+    Time Complexity:
+    Best Case: (O(n + k))
+    Average Case: (O(n + k))
+    Worst Case: (O(n + k))
+    Space Complexity: (O(k))
+    Description: Efficient for small range of integers, stable.
+8. Radix Sort
+    Time Complexity:
+    Best Case: (O(nk))
+    Average Case: (O(nk))
+    Worst Case: (O(nk))
+    Space Complexity: (O(n + k))
+    Description: Efficient for large range of integers, stable.
+9. Bucket Sort
+    Time Complexity:
+    Best Case: (O(n + k))
+    Average Case: (O(n + k))
+    Worst Case: (O(n^2))
+    Space Complexity: (O(n + k))
+    Description: Efficient for uniformly distributed data, stable.
+10. Shell Sort
+    Time Complexity:
+    Best Case: (O(n \log n))
+    Average Case: (O(n \log^2 n))
+    Worst Case: (O(n \log^2 n))
+    Space Complexity: (O(1))

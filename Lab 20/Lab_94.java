@@ -1,4 +1,13 @@
 // Write a program to implement Selection Sort using Array.
+/*
+    Time Complexity:
+    Best Case: (O(n^2))
+    Average Case: (O(n^2))
+    Worst Case: (O(n^2))
+
+    Space Complexity: (O(1))
+    Description: Simple but inefficient, always performs (O(n^2)) comparisons.
+ */
 
 import java.util.Arrays;
 import java.util.Scanner;

@@ -1,5 +1,10 @@
 // Write a program to implement a Binary Search using Array.
 // Using both while loop & recursion.
+/*
+    Best Case: (O(1))
+    Average Case: (O(\log n))
+    Worst Case: (O(\log n))
+*/
 
 import java.util.Scanner;
 
@@ -18,7 +23,7 @@ public class Lab_91 {
           int l=0;
           int h=n-1;
           while(l<=h){
-               int m=(l+h)/2;
+               int m=l+(h-l)/2;
                if(s==a[m]){
                     System.out.println("Element is found at index "+m+" (While Loop)");
                     break;
@@ -41,7 +46,7 @@ public class Lab_91 {
 
      private static void binary_Search(int[] a, int l, int h, int s){
           if (l<=h) {
-               int m=(l+h)/2;
+               int m=l+(h-l)/2;
                if(s==a[m]){
                     System.out.println("Element is found at index "+m+" (Using Recursion)");
                }

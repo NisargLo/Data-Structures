@@ -1,4 +1,13 @@
 // Write a program to implement Bubble Sort using Array.
+/*
+    Time Complexity:
+    Best Case: (O(n))
+    Average Case: (O(n^2))
+    Worst Case: (O(n^2))
+
+    Space Complexity: (O(1))
+    Description: Simple and stable, but inefficient for large datasets.
+ */
 
 import java.util.Arrays;
 import java.util.Scanner;

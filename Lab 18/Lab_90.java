@@ -1,4 +1,9 @@
 // Write a program to implement a Linear Search using Array. 
+/*
+     Best Case: (O(1))
+     Average Case: (O(n))
+     Worst Case: (O(n))
+*/
 
 import java.util.Scanner;
 
