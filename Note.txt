@@ -17,6 +17,7 @@ class String_Node → Lab_75.java.java
 class String_LinkedList → Lab_75.java
 class Doubly_Node → Lab_72.java
 class Int_Doubly_LinkedList → Lab_72.java
+class Int_Tree_Node → Array_To_CompleteBinaryTree.java
 class Int_Complete_Binary_Tree → Array_To_CompleteBinaryTree.java
 
 
