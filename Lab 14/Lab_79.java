@@ -6,11 +6,8 @@ public class Lab_79 {
     }
 
     private static boolean isEqual(Int_Tree_Node node1, Int_Tree_Node node2){
-        if (node1==null && node2==null) {
-            return true;
-        }
         if (node1==null || node2==null) {
-            return false;
+            return node1==node2;
         }
         if(node1.info!=node2.info){
             return false;
