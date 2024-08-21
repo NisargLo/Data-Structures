@@ -4,8 +4,6 @@
     Best Case: (O(n^2))
     Average Case: (O(n^2))
     Worst Case: (O(n^2))
-
-    Space Complexity: (O(1))
     Description: Simple but inefficient, always performs (O(n^2)) comparisons.
  */
 

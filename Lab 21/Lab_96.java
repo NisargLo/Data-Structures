@@ -4,8 +4,6 @@
     Best Case: (O(n \log n))
     Average Case: (O(n \log n))
     Worst Case: (O(n \log n))
-
-    Space Complexity: (O(n))
     Description: Stable and efficient, uses a divide-and-conquer approach.
 */
 
