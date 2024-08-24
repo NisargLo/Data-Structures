@@ -1,8 +1,8 @@
 //Write a program to implement Quick Sort using Array.
 /*
     Time Complexity:
-    Best Case: (O(n \log n))
-    Average Case: (O(n \log n))
+    Best Case: (O(n * log n))
+    Average Case: (O(n * log n))
     Worst Case: (O(n^2))
     Description: Fast and efficient, but not stable. Uses divide-and-conquer.
  */

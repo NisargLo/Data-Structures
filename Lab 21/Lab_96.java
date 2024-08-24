@@ -1,9 +1,9 @@
 // Write a program to implement Merge Sort using Array.
 /*
     Time Complexity:
-    Best Case: (O(n \log n))
-    Average Case: (O(n \log n))
-    Worst Case: (O(n \log n))
+    Best Case: (O(n * log n))
+    Average Case: (O(n * log n))
+    Worst Case: (O(n * log n))
     Description: Stable and efficient, uses a divide-and-conquer approach.
 */
 
