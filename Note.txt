@@ -27,12 +27,6 @@ class Int_Complete_Binary_Tree → Array_To_CompleteBinaryTree.java
     Average Case: (O(n * log n))
     Worst Case: (O(n * log n))
     Description: Efficient and in-place, but not stable.
-7. Counting Sort
-    Time Complexity:
-    Best Case: (O(n + k))
-    Average Case: (O(n + k))
-    Worst Case: (O(n + k))
-    Description: Efficient for a small range of integers, stable.
 8. Radix Sort
     Time Complexity:
     Best Case: (O(nk))
@@ -45,9 +39,3 @@ class Int_Complete_Binary_Tree → Array_To_CompleteBinaryTree.java
     Average Case: (O(n + k))
     Worst Case: (O(n^2))
     Description: Efficient for uniformly distributed data, stable.
-10. Shell Sort
-    Time Complexity:
-    Best Case: (O(n * log n))
-    Average Case: (O(n * log^2 n))
-    Worst Case: (O(n * log^2 n))
-    Description: Efficient for Medium-Sized arrays, Partially Sorted Data, Memory Constraints, but not stable.
