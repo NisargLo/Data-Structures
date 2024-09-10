@@ -27,12 +27,6 @@ class Int_Complete_Binary_Tree → Array_To_CompleteBinaryTree.java
     Average Case: (O(n * log n))
     Worst Case: (O(n * log n))
     Description: Efficient and in-place, but not stable.
-8. Radix Sort
-    Time Complexity:
-    Best Case: (O(nk))
-    Average Case: (O(nk))
-    Worst Case: (O(nk))
-    Description: Efficient for a large range of integers, stable.
 9. Bucket Sort
     Time Complexity:
     Best Case: (O(n + k))

@@ -24,8 +24,8 @@ public class Lab_96 {
           }
           sc.close();
           System.out.println("Array before Merge Sort - " + Arrays.toString(a));
-          divide(0, n-1); //divide(low,high)
-          conquer(0, n / 2, n - 1); //conquer(low,mid,high)
+          divide(0, a.length-1); //divide(low,high)
+          conquer(0, a.length / 2, a.length - 1); //conquer(low,mid,high)
           System.out.println("Array after Merge Sort - " + Arrays.toString(a));
      }
 
