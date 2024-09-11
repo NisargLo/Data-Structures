@@ -30,13 +30,12 @@ public class Lab_96 {
      }
 
      private static void divide(int low, int high) {
-          if (low >= high) {
-               return;
-          }
-          int mid = low + (high - low) / 2;
-          divide(low, mid);
-          divide(mid + 1, high);
-          conquer(low, mid, high);
+          if (low < high) {
+              int mid = low + (high - low) / 2;
+              divide(low, mid);
+              divide(mid + 1, high);
+              conquer(low, mid, high);
+          } 
      }
 
      private static void conquer(int low, int mid, int high){
