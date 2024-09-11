@@ -1,11 +1,12 @@
 // Write a program to implement a Binary Search using Array.
-// Using both while loop & recursion.
+// Note: Using both while loop & recursion.
 /*
     Best Case: (O(1))
-    Average Case: (O(\log n))
-    Worst Case: (O(\log n))
+    Average Case: (O(log n))
+    Worst Case: (O(log n))
 */
 
+import java.util.Arrays;
 import java.util.Scanner;
 
 public class Lab_91 {
@@ -18,6 +19,7 @@ public class Lab_91 {
                System.out.println("Enter element " + (i + 1) + ":");
                a[i] = sc.nextInt();
           }
+          Arrays.sort(a); // In case, if array is not already sorted.
           System.out.println("Enter number to search:");
           int s = sc.nextInt();
           int l=0;
@@ -29,10 +31,10 @@ public class Lab_91 {
                     break;
                }
                else if(s>a[m]){
-                    l++;
+                    l=m+1;
                }
                else{
-                    h--;
+                    h=m-1;
                }
                if(l>h){
                     System.out.println("Element not found (While Loop)");
