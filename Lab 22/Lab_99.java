@@ -2,8 +2,8 @@
 /*
      Time Complexity:
      Best Case: (O(n * log n))
-     Average Case: (O(n * log^2 n))
-     Worst Case: (O(n * log^2 n))
+     Average Case: (O(n * log n)) / (O(n * log^2 n))
+     Worst Case: (O(n * log^2 n)) / (O(n^2))
      Description: Efficient for Medium-Sized arrays, Partially Sorted Data, Memory Constraints, but not stable.
  */
 
@@ -36,11 +36,14 @@ public class Lab_99 {
 			for (int i = gap; i < l; i++) {
 				int temp = a[i];
 				int j = i;
+				
+				//Insertion Sort
 				while (j >= gap && a[j - gap] > temp) {
 					a[j] = a[j - gap];
 					j -= gap;
 				}
 				a[j] = temp;
+				
 			}
 		}
 	}
