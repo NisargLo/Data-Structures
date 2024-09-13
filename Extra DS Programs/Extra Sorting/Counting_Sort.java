@@ -8,8 +8,6 @@
      Description: Efficient for a small range of integers, stable.
  */
 
-package Extra_Sorting;
-
 import java.util.Arrays;
 import java.util.Scanner;
 
