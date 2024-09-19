@@ -35,4 +35,3 @@ Worst → Bubble Sort
     Average Case: (O(n + k))
     Worst Case: (O(n^2))
     Description: Efficient for uniformly distributed data, stable.
-10. Heap Sort
