@@ -24,16 +24,10 @@ public class Lab_56 {
 }
 
 class Node {
-    public int info;
-    public Node link;
+    int info;
+    Node link;
 
     public Node(int data){
         this.info=data;
-        this.link=null;
-    }
-
-    public Node(int data, Node anotherLink){
-        this.info=data;
-        this.link=anotherLink;
     }
 }

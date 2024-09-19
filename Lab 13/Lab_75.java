@@ -11,6 +11,8 @@ public class Lab_75 {
         Scanner sc=new Scanner(System.in);
         String_LinkedList playlist = new String_LinkedList();
         int choice=0;
+        String song;
+        int index;
         while (choice!=-1) {
             System.out.println("\nEnter 1 to play next song from playlist :");
             System.out.println("Enter 2 to play previous song from playlist :");
@@ -39,28 +41,28 @@ public class Lab_75 {
 
                 case 3:
                     System.out.println("Enter song :");
-                    String song1=sc.nextLine();
-                    playlist.insertAtFirstPosition(song1);
+                    song=sc.nextLine();
+                    playlist.insertAtFirstPosition(song);
                     break;
 
                 case 4:
                     System.out.println("Enter song :");
-                    String song2=sc.nextLine();
-                    playlist.insertAtLastPosition(song2);
+                    song=sc.nextLine();
+                    playlist.insertAtLastPosition(song);
                     break;
 
                 case 5:
                     System.out.println("Enter song :");
-                    String song3=sc.nextLine();
-                    playlist.insertAtOrder(song3);
+                    song=sc.nextLine();
+                    playlist.insertAtOrder(song);
                     break;
 
                 case 6:
                     System.out.println("Enter Index :");
-                    int index1=sc.nextInt();
+                    index=sc.nextInt();
                     System.out.println("Enter song :");
-                    String song4=sc.nextLine();
-                    playlist.insertAtSpecificPosition(index1, song4);
+                    song=sc.nextLine();
+                    playlist.insertAtSpecificPosition(index, song);
                     break;
 
                 case 7:
@@ -73,14 +75,14 @@ public class Lab_75 {
 
                 case 9:
                     System.out.println("Enter Index :");
-                    int index2=sc.nextInt();
-                    playlist.deleteFromSpecificPosition(index2);
+                    index=sc.nextInt();
+                    playlist.deleteFromSpecificPosition(index);
                     break;
 
                 case 10:
                     System.out.println("Enter song :");
-                    String song5=sc.nextLine();
-                    playlist.deleteGivenDataFromLinkedList(song5);
+                    song=sc.nextLine();
+                    playlist.deleteGivenDataFromLinkedList(song);
                     break;
 
                 case 11:
@@ -107,17 +109,11 @@ public class Lab_75 {
 }
 
 class String_Node {
-    public String info;
-    public String_Node link;
+    String info;
+    String_Node link;
 
     public String_Node(String data){
         this.info=data;
-        this.link=null;
-    }
-
-    public String_Node(String data, String_Node anotherLink){
-        this.info=data;
-        this.link=anotherLink;
     }
 }
 

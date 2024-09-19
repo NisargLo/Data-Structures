@@ -15,6 +15,7 @@ public class Lab_57 {
         Scanner sc=new Scanner(System.in);
         Int_LinkedList ll = new Int_LinkedList();
         int choice=0;
+        int num, index;
         while (choice!=-1) {
             System.out.println("\nEnter 1 for insertAtFirstPosition() :");
             System.out.println("Enter 2 for insertAtLastPosition() :");
@@ -32,28 +33,28 @@ public class Lab_57 {
             switch (choice) {
                 case 1:
                     System.out.println("Enter Number :");
-                    int num1=sc.nextInt();
-                    ll.insertAtFirstPosition(num1);
+                    num=sc.nextInt();
+                    ll.insertAtFirstPosition(num);
                     break;
 
                 case 2:
                     System.out.println("Enter Number :");
-                    int num2=sc.nextInt();
-                    ll.insertAtLastPosition(num2);
+                    num=sc.nextInt();
+                    ll.insertAtLastPosition(num);
                     break;
 
                 case 3:
                     System.out.println("Enter Number :");
-                    int num3=sc.nextInt();
-                    ll.insertAtOrder(num3);
+                    num=sc.nextInt();
+                    ll.insertAtOrder(num);
                     break;
 
                 case 4:
                     System.out.println("Enter Index :");
-                    int index1=sc.nextInt();
+                    index=sc.nextInt();
                     System.out.println("Enter Number :");
-                    int num4=sc.nextInt();
-                    ll.insertAtSpecificPosition(index1, num4);
+                    num=sc.nextInt();
+                    ll.insertAtSpecificPosition(index, num);
                     break;
 
                 case 5:
@@ -66,14 +67,14 @@ public class Lab_57 {
 
                 case 7:
                     System.out.println("Enter Index :");
-                    int index2=sc.nextInt();
-                    ll.deleteFromSpecificPosition(index2);
+                    index=sc.nextInt();
+                    ll.deleteFromSpecificPosition(index);
                     break;
 
                 case 8:
                     System.out.println("Enter Number :");
-                    int num5=sc.nextInt();
-                    ll.deleteGivenDataFromLinkedList(num5);
+                    num=sc.nextInt();
+                    ll.deleteGivenDataFromLinkedList(num);
                     break;
 
                 case 9:

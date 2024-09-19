@@ -13,14 +13,15 @@ public class Lab_38 {
         int n = sc.nextInt();
         Int_Stack S = new Int_Stack(n);
         String choice = "";
+        int num, index;
         while (!choice.equalsIgnoreCase("None")) {
             System.out.println("\nEnter Operation (push, pop, peep, change, display, isEmpty, none) :");
             choice = sc.next();
             switch (choice) {
                 case "push":
                     System.out.println("Enter Number :");
-                    int num1 = sc.nextInt();
-                    S.push(num1);
+                    num = sc.nextInt();
+                    S.push(num);
                     break;
 
                 case "pop":
@@ -32,19 +33,19 @@ public class Lab_38 {
 
                 case "peep":
                     System.out.println("Enter Index :");
-                    int indexPeep = sc.nextInt();
-                    int peep=S.peep(indexPeep);
+                    index = sc.nextInt();
+                    int peep=S.peep(index);
                     if(peep!=Integer.MIN_VALUE){
-                        System.out.println("pop() - " + peep);
+                        System.out.println("peep() - " + peep);
                     }
                     break;
 
                 case "change":
                     System.out.println("Enter Index :");
-                    int indexChange = sc.nextInt();
+                    index = sc.nextInt();
                     System.out.println("Enter Number :");
-                    int num2 = sc.nextInt();
-                    S.change(indexChange, num2);
+                    num = sc.nextInt();
+                    S.change(index, num);
                     break;
 
                 case "display":

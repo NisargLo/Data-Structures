@@ -56,8 +56,7 @@ public class Lab_44{
 
         public FastReader() {
             try {
-                br = new BufferedReader(
-                        new FileReader("input.txt"));
+                br = new BufferedReader(new FileReader("input.txt"));
                 PrintStream out = new PrintStream(new FileOutputStream("output.txt"));
                 System.setOut(out);
             }

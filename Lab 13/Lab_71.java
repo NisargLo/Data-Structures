@@ -13,6 +13,7 @@ public class Lab_71 {
         Scanner sc=new Scanner(System.in);
         Int_Circular_LinkedList cll = new Int_Circular_LinkedList();
         int choice=0;
+        int num, index;
         while (choice!=-1) {
             System.out.println("\nEnter 1 for insertAtFirstPosition() :");
             System.out.println("Enter 2 for insertAtLastPosition() :");
@@ -30,28 +31,28 @@ public class Lab_71 {
             switch (choice) {
                 case 1:
                     System.out.println("Enter Number :");
-                    int num1=sc.nextInt();
-                    cll.insertAtFirstPosition(num1);
+                    num=sc.nextInt();
+                    cll.insertAtFirstPosition(num);
                     break;
 
                 case 2:
                     System.out.println("Enter Number :");
-                    int num2=sc.nextInt();
-                    cll.insertAtLastPosition(num2);
+                    num=sc.nextInt();
+                    cll.insertAtLastPosition(num);
                     break;
 
                 case 3:
                     System.out.println("Enter Number :");
-                    int num3=sc.nextInt();
-                    cll.insertAtOrder(num3);
+                    num=sc.nextInt();
+                    cll.insertAtOrder(num);
                     break;
 
                 case 4:
                     System.out.println("Enter Index :");
-                    int index1=sc.nextInt();
+                    index=sc.nextInt();
                     System.out.println("Enter Number :");
-                    int num4=sc.nextInt();
-                    cll.insertAtSpecificPosition(index1, num4);
+                    num=sc.nextInt();
+                    cll.insertAtSpecificPosition(index, num);
                     break;
 
                 case 5:
@@ -64,14 +65,14 @@ public class Lab_71 {
 
                 case 7:
                     System.out.println("Enter Index :");
-                    int index2=sc.nextInt();
-                    cll.deleteFromSpecificPosition(index2);
+                    index=sc.nextInt();
+                    cll.deleteFromSpecificPosition(index);
                     break;
 
                 case 8:
                     System.out.println("Enter Number :");
-                    int num5=sc.nextInt();
-                    cll.deleteGivenDataFromCircularLinkedList(num5);
+                    num=sc.nextInt();
+                    cll.deleteGivenDataFromCircularLinkedList(num);
                     break;
 
                 case 9:
