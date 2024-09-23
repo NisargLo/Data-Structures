@@ -7,6 +7,7 @@ public class Lab_48 {
         Scanner sc = new Scanner(System.in);
         System.out.println("Enter the prefix expression:");
         String prefix = sc.nextLine();
+        sc.close();
         int result = evaluatePrefix(prefix);
         System.out.println("Result of evaluating prefix - " + result);
     }

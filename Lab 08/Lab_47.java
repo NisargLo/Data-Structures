@@ -7,6 +7,7 @@ public class Lab_47 {
           Scanner sc = new Scanner(System.in);
           System.out.println("Enter the postfix expression:");
           String postfix = sc.nextLine();
+          sc.close();
           int result = evaluatePostfix(postfix);
           System.out.println("Result of evaluating postfix - " + result);
      }
