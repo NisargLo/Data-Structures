@@ -20,6 +20,7 @@ class Int_Doubly_LinkedList → Lab_72.java
 class Int_Tree_Node → Int_Tree_Node.java
 class Int_Complete_Binary_Tree → Array_To_CompleteBinaryTree.java
 class Int_Binary_Search_Tree → Lab_77.java
+class Int_Complete_Binary_Tree → Lab_80.java
 
 
 For small arrays (generally):-
