@@ -25,8 +25,8 @@ public class Lab_38 {
                     break;
 
                 case "pop":
-                    int pop=S.pop();
-                    if(pop!=Integer.MIN_VALUE){
+                    int pop = S.pop();
+                    if (pop != Integer.MIN_VALUE) {
                         System.out.println("pop() - " + pop);
                     }
                     break;
@@ -34,8 +34,8 @@ public class Lab_38 {
                 case "peep":
                     System.out.println("Enter Index :");
                     index = sc.nextInt();
-                    int peep=S.peep(index);
-                    if(peep!=Integer.MIN_VALUE){
+                    int peep = S.peep(index);
+                    if (peep != Integer.MIN_VALUE) {
                         System.out.println("peep() - " + peep);
                     }
                     break;
@@ -55,8 +55,7 @@ public class Lab_38 {
                 case "isEmpty":
                     if (S.isEmpty()) {
                         System.out.println("Empty Stack");
-                    } 
-                    else {
+                    } else {
                         System.out.println("Non-Empty Stack");
                     }
                     break;
@@ -78,8 +77,8 @@ class Int_Stack {
     private final int size;
 
     protected Int_Stack(int size) {
-        this.size=size;
-        this.stack_array=new int[this.size];
+        this.size = size;
+        this.stack_array = new int[this.size];
     }
 
     protected void push(int x) {
@@ -96,27 +95,34 @@ class Int_Stack {
             System.out.println("Stack Underflow");
             return Integer.MIN_VALUE;
         }
-        int data = stack_array[top];
         top--;
-        return data;
+        return stack_array[top + 1];
     }
 
-    // user enters 1 based index :-
+    // user enters 0 based index :-
     protected int peep(int index) {
-        if (top + 1 - index < 0) {
+        if (top - index < 0) {
             System.out.println("Stack Underflow");
             return Integer.MIN_VALUE;
         }
-        return stack_array[top + 1 - index];
+        if (index < 0 || index > top) {
+            System.out.println("Invalid index");
+            return Integer.MIN_VALUE;
+        }
+        return stack_array[top - index];
     }
 
-    // user enters 1 based index :-
+    // user enters 0 based index :-
     protected void change(int index, int x) {
-        if (top + 1 - index < 0) {
+        if (top - index < 0) {
             System.out.println("Stack Underflow");
             return;
         }
-        stack_array[top + 1 - index] = x;
+        if (index < 0 || index > top) {
+            System.out.println("Invalid index");
+            return;
+        }
+        stack_array[top - index] = x;
     }
 
     protected void display() {

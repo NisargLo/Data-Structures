@@ -7,21 +7,21 @@ import java.util.Scanner;
 
 public class Lab_39 {
     public static void main(String[] args) {
-        Scanner sc=new Scanner(System.in);
+        Scanner sc = new Scanner(System.in);
         System.out.println("Enter String :");
-        String str=sc.next();
-        Char_Stack cs=new Char_Stack(str.length());
-        for(int i=0;i<str.length();i++){
-            if(str.toLowerCase().charAt(i)!='a' && str.toLowerCase().charAt(i)!='b' && str.toLowerCase().charAt(i)!='c'){
+        String str = sc.next();
+        Char_Stack cs = new Char_Stack(str.length());
+        for (int i = 0; i < str.length(); i++) {
+            if (str.toLowerCase().charAt(i) != 'a' && str.toLowerCase().charAt(i) != 'b'
+                    && str.toLowerCase().charAt(i) != 'c') {
                 System.out.println("String not recognized.");
                 return;
-            }
-            else{
+            } else {
                 cs.push(str.charAt(i));
             }
         }
-        for(int i=0;i<str.length();i++){
-            if(str.charAt(i)!=cs.pop()){
+        for (int i = 0; i < str.length(); i++) {
+            if (str.charAt(i) != cs.pop()) {
                 System.out.println("String not recognized.");
                 return;
             }
@@ -36,8 +36,8 @@ class Char_Stack {
     private final int size;
 
     protected Char_Stack(int size) {
-        this.size=size;
-        this.stack_array=new char[this.size];
+        this.size = size;
+        this.stack_array = new char[this.size];
     }
 
     protected void push(char x) {
@@ -54,31 +54,38 @@ class Char_Stack {
             System.out.println("Stack Underflow");
             return '0';
         }
-        char data = stack_array[top];
         top--;
-        return data;
+        return stack_array[top + 1];
     }
 
-    // user enters 1 based index :-
+    // user enters 0 based index :-
     protected char peep(int index) {
-        if (top + 1 - index < 0) {
+        if (top - index < 0) {
             System.out.println("Stack Underflow");
-            return 0;
+            return '0';
         }
-        return stack_array[top + 1 - index];
+        if (index < 0 || index > top) {
+            System.out.println("Invalid index");
+            return '0';
+        }
+        return stack_array[top - index];
     }
 
-    // user enters 1 based index :-
+    // user enters 0 based index :-
     protected void change(int index, char x) {
-        if (top + 1 - index < 0) {
+        if (top - index < 0) {
             System.out.println("Stack Underflow");
             return;
         }
-        stack_array[top + 1 - index] = x;
+        if (index < 0 || index > top) {
+            System.out.println("Invalid index");
+            return;
+        }
+        stack_array[top - index] = x;
     }
 
     protected void display() {
-        if(isEmpty()){
+        if (isEmpty()) {
             System.out.println("Empty Stack...");
             return;
         }
@@ -90,6 +97,6 @@ class Char_Stack {
     }
 
     protected boolean isEmpty() {
-        return top==-1;
+        return top == -1;
     }
 }
