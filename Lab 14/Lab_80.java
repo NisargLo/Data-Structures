@@ -38,7 +38,3 @@ public class Lab_80 {
 		return compareBST(node1.left,node2.right) && compareBST(node1.right,node2.left);
 	}
 }
-
-class Int_Complete_Binary_Tree{
-	
-}

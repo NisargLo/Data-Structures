@@ -20,7 +20,6 @@ class Int_Doubly_LinkedList → Lab_72.java
 class Int_Tree_Node → Int_Tree_Node.java
 class Int_Complete_Binary_Tree → Array_To_CompleteBinaryTree.java
 class Int_Binary_Search_Tree → Lab_77.java
-class Int_Complete_Binary_Tree → Lab_80.java
 
 
 For small arrays (generally):-
@@ -30,10 +29,3 @@ Worst → Heap Sort
 For large arrays (generally):-
 Best → Merge Sort / Quick Sort
 Worst → Bubble Sort
-
-9. Bucket Sort
-    Time Complexity:
-    Best Case: (O(n + k))
-    Average Case: (O(n + k))
-    Worst Case: (O(n^2))
-    Description: Efficient for uniformly distributed data, stable.
