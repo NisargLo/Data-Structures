@@ -2,7 +2,7 @@
 
 import java.util.Scanner;
 
-public class Factorial {
+public class Factorial_Using_Stack {
     public static void main(String[] args) {
         Scanner sc=new Scanner(System.in);
         System.out.println("Enter number: ");
